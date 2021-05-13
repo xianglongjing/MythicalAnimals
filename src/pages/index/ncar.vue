@@ -8,7 +8,7 @@
         <view class="con-r">
             <view class="title">医企管家官方挪车码</view>
             <text class="text-gray">优惠价格 仅享一次</text>
-            <view class="price">￥ <text class="big">1.00</text></view>
+<!--            <view class="price">￥ <text class="big">1.00</text></view>-->
             <view class="price">￥ <text class="big">1.00</text></view>
             <u-button :customStyle="buy">立即购买</u-button>
         </view>

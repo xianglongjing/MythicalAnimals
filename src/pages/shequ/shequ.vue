@@ -1,13 +1,17 @@
 <template>
     <view class="page">
+<!--        <uni-nav-bar :status-bar="true" left-icon="back" :fixed="true" :border="false" :shadow="false" @clickLeft="goBack">-->
+<!--            <view class="inline-block u-border-bottom" style="width:100%;padding:20rpx">-->
+<!--            </view>-->
+<!--        </uni-nav-bar>-->
         <view class="bg" :style="bg">
            <view class="bg-con">
                <view class="big u-margin-bottom-20">合作园区</view>
                <text class="title">合作园区·一个有生意的社区</text>
-               <view class="more">
-                   <text>了解更多</text>
-                   <text class="cuIcon-right"></text>
-               </view>
+<!--               <view class="more">-->
+<!--                   <text>了解更多</text>-->
+<!--                   <text class="cuIcon-right"></text>-->
+<!--               </view>-->
            </view>
         </view>
         <view class="slide">

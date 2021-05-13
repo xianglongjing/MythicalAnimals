@@ -224,20 +224,23 @@
 
           // const data = res;
           let map= {
-            appid:res.appid,
-            noncestr:res.noncestr,
-            package:res.package,
-            prepayid:res.prepayid,
-            partnerid:res.partnerid,
-            timestamp:res.timestamp,
-            sign:res.sign,
+            "appid":res.appid,
+            "appId":res.appid,
+            "noncestr":res.noncestr,
+            "nonceStr":res.noncestr,
+            "package":res.package,
+            "prepayid":res.prepayid,
+            "prepayId":res.prepayid,
+            "partnerid":res.partnerid,
+            "timestamp":res.timestamp,
+            "sign":res.sign,
             // notify_url:'http://pay.yiqiwang360.com/api/pay/wxNotify'
           }
-        let orderInfo = JSON.stringify(map)
-        console.log(orderInfo)
+        // let orderInfo = JSON.stringify(map)
+        console.log(map)
         uni.requestPayment({
             provider: "wxpay",
-            orderInfo: orderInfo,
+            orderInfo: map,
             success: function(res) {
               uni.showToast({
                 title: '支付成功',

@@ -13,6 +13,26 @@
       }
     },
     {
+      "path": "pages/index/gindex",
+      "style": {
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "医企管家",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#ffffff"
+      }
+    },
+    {
+      "path": "pages/index/cindex",
+      "style": {
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "企仁企信商城",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#ffffff"
+      }
+    },
+    {
       "path": "pages/index/nearboss",
       "style": {
         "navigationBarTitleText": "身边的老板",
@@ -264,6 +284,15 @@
       }
     },
     {
+      "path": "pages/shequ/shequ",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationStyle": "custom",
+        "navigationBarBackgroundColor": "#ffffff",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
       "path": "pages/shequ/shequvisit",
       "style": {
         "navigationBarTitleText": "中关村",
@@ -301,15 +330,6 @@
         "navigationBarTitleText": "发票详情",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FFFFFF"
-      }
-    },
-    {
-      "path": "pages/shequ/shequ",
-      "style": {
-        "navigationBarTitleText": "",
-        "navigationStyle": "custom",
-        "navigationBarBackgroundColor": "#ffffff",
-        "navigationBarTextStyle": "black"
       }
     },
     {
@@ -540,6 +560,15 @@
     },
     {
       "path": "pages/orders/placeOrder",
+      "style": {
+        "navigationBarBackgroundColor": "#000000",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "会员中心",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/orders/placeorders",
       "style": {
         "navigationBarBackgroundColor": "#000000",
         "navigationBarTextStyle": "white",
@@ -1720,28 +1749,34 @@
     "borderStyle": "white",
     "list": [
       {
-        "text": "首页",
+        "text": "商城",
+        "pagePath": "pages/index/cindex",
+        "iconPath": "http://images.yiqiwang360.com/qirenqixin/qiren1.png",
+        "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren6.png"
+      },
+      {
+        "text": "管家",
+        "pagePath": "pages/index/gindex",
+        "iconPath": "http://images.yiqiwang360.com/qirenqixin/qiren2.png",
+        "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren7.png"
+      },
+      {
+        "text": "企仁企信查",
         "pagePath": "pages/index/index",
-        "iconPath": "static/icons/home.png",
-        "selectedIconPath": "static/icons/shouye.png"
+        "iconPath": "http://images.yiqiwang360.com/qirenqixin/qiren3.png",
+        "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren8.png"
       },
       {
-        "text": "查老板",
-        "pagePath": "pages/index/souboss",
-        "iconPath": "static/icons/chalaoban.png",
-        "selectedIconPath": "static/icons/laoban2.png"
-      },
-      {
-        "text": "广场",
+        "text": "社区",
         "pagePath": "pages/index/square",
-        "iconPath": "static/icons/guangchang.png",
-        "selectedIconPath": "static/icons/yingyong.png"
+        "iconPath": "http://images.yiqiwang360.com/qirenqixin/qiren4.png",
+        "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren10.png"
       },
       {
         "text": "我的",
         "pagePath": "pages/mine/mine",
-        "iconPath": "static/icons/wodeh.png",
-        "selectedIconPath": "static/icons/wode.png"
+        "iconPath": "http://images.yiqiwang360.com/qirenqixin/qiren5.png",
+        "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren9.png"
       }
     ]
   },

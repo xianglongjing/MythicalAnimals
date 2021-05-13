@@ -55,6 +55,7 @@
     export default {
         data(){
             return {
+                // key: '35d32d635e17746f7054c71c8539a377',
                 value1: '',
                 value2: '',
                 options1: [{
@@ -84,8 +85,21 @@
 
         onLoad(){
             this.location()
+            // this.getLocation()
         },
         methods:{
+            //定位信息
+            // getLocation(){
+            //     uni.getLocation({
+            //         type: 'wgs84',
+            //         success: function (res) {
+            //             console.log(res)
+            //             if (res.address){
+            //                 this.district = res.address.district
+            //             }
+            //         }
+            //     })
+            // },
             location(){
                 uni.chooseLocation({
                     success: function(res) {

@@ -85,15 +85,6 @@
           </view>
           <view v-if="current===2">
             <view class="inline-block" style="width: 100%;margin-top:20rpx">
-<!--              <u-search-->
-<!--                      :action-style="search_btn"-->
-<!--                      :animation="true" disabled-->
-<!--                      @custom="goSearch"-->
-<!--                      @click="danger"-->
-<!--                      bg-color="#f8f8f8"-->
-<!--                      input-align="left"-->
-<!--                      placeholder="请输入企业名称 老板名称 工商注册号等" shape="square"-->
-<!--              ></u-search>-->
               <u-search
                       :action-style="search_btn"
                       :animation="true" disabled
@@ -159,7 +150,7 @@
           <u-image src="https://yiqiwang360.com/images/yiqicha/shangbiao.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>查商标</text>
         </view>
-        <view class="types-con" @click="kaifa">
+        <view class="types-con" @click="go('index/danger')">
           <u-image src="https://yiqiwang360.com/images/yiqicha/fengxian.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>查风险</text>
         </view>
@@ -206,12 +197,15 @@
             {{item.title}}
           </view>
           <view class="desc u-line-1">
-            <text>{{item.source}}</text>
+            <text style="white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;">{{item.source}}</text>
             <text>1.5万阅读</text>
             <text>{{item.release_time}}</text>
           </view>
         </view>
-        <u-image :src="'http://yiqiwang360.com/'+item.image" width="200" height="120"></u-image>
+        <u-image mode="aspectFit" :src="'http://yiqiwang360.com/'+item.image" width="200" height="120"></u-image>
       </view>
       <view v-show="newcurrent===2" class="new-con u-border-bottom" @click="newdetail(item.id)" v-for="item in newsList3" :key="item.id">
         <view class="new-l">
@@ -226,16 +220,16 @@
         </view>
         <u-image :src="'http://yiqiwang360.com/'+item.image" width="200" height="120"></u-image>
       </view>
-      <u-popup v-model="show" mode="center" style="border-radius: 20rpx" close-icon-pos="top-right" :closeable="true" length="78%">
-      <view style="padding:50rpx 0;text-align: center">
-        <view style="color:white;font-size: 45rpx;font-weight: 600">我们共有三种服务</view>
-        <view style="margin-top:20rpx;letter-spacing:10rpx;font-weight: 600;font-size: 52rpx;color:#FBCA41">请选择您最需要的</view>
-        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="cha">企仁企信查</u-button>
-        <u-button :hair-line="false" :plain="true" shape="circle" @click="guanjia" :customStyle="button">企仁企信管家</u-button>
-        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="shang">企仁企信商城</u-button>
-      </view>
+<!--      <u-popup v-model="show" mode="center" style="border-radius: 20rpx" close-icon-pos="top-right" :closeable="true" length="78%">-->
+<!--      <view style="padding:50rpx 0;text-align: center">-->
+<!--        <view style="color:white;font-size: 45rpx;font-weight: 600">我们共有三种服务</view>-->
+<!--        <view style="margin-top:20rpx;letter-spacing:10rpx;font-weight: 600;font-size: 52rpx;color:#FBCA41">请选择您最需要的</view>-->
+<!--        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="cha">企仁企信查</u-button>-->
+<!--        <u-button :hair-line="false" :plain="true" shape="circle" @click="guanjia" :customStyle="button">企仁企信管家</u-button>-->
+<!--        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="shang">企仁企信商城</u-button>-->
+<!--      </view>-->
 
-      </u-popup>
+<!--      </u-popup>-->
     </view>
   </view>
 </template>
@@ -433,7 +427,9 @@
       })
     },
     souboss(){
-      uni.switchTab({
+      uni.navigateTo(
+
+              {
         url:'/pages/index/souboss'
       })
     },

@@ -4,7 +4,6 @@
       <view slot="left" class="flex" @click="goto('index/cities')">
         <image class="navbar-icon" src="@/static/icons/location.png"></image>
         <text class="navbar-text">{{addressName}}</text>
-
       </view>
       <view slot="default">
         <view class="search-box">
