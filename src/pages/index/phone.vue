@@ -4,8 +4,8 @@
         <view class="inline-block u-border-bottom" style="width:100%">
             <u-search
                     :action-style="search_btn"
-                    :animation="true"
-                    @custom="goSearch"
+                    :animation="true" @clear="clear"
+                    @custom="goSearch" clearabled
                     @search="goSearch"
                     bg-color="#f8f8f8"
                     input-align="left" style="width: 560rpx; padding:20rpx 0;"
@@ -22,7 +22,7 @@
         </view>
             </view>
 <!--            <view style="height:50rpx"></view>-->
-            <u-empty class="u-margin-30" text="暂无相关内容" mode="search" :show="emptyShow"></u-empty>
+            <u-empty src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" mode="search" :show="emptyShow"></u-empty>
 
     </view>
         <view class="company u-margin-top-20">
@@ -83,6 +83,23 @@
             }
         },
         methods:{
+            clear(){
+                this.goodsList=[]
+                this.emptyShow = false
+                uni.removeStorage({
+                    key: 'keyword',
+                    success() {
+                        console.log('删除成功')
+                    }
+                })
+                this.pageNum = 0
+                // this.getSearchList()
+            },
+            shopDetail(id){
+                uni.navigateTo({
+                    url:'/pages/index/chashop?id='+id
+                })
+            },
             goSearch(){
                 this.getSearchList()
             },

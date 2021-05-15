@@ -55,9 +55,9 @@
             return {
                 group:{},
                 List: [{
-                    name: '法院公告1'
+                    name: '法院公告'
                 }, {
-                    name: '历史开庭公告0'
+                    name: '历史开庭公告'
                 }],
                 current:0,
                 value1:'',

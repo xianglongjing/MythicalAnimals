@@ -119,7 +119,7 @@
         <view class="person u-border-bottom">
           <text>实付金额</text>
           <view>
-            1*{{num}}= <text style="font-weight: 600;font-size: 32rpx">100</text>元
+            {{nprice}}*{{num}}= <text style="font-weight: 600;font-size: 32rpx">100</text>元
           </view>
         </view>
         <view class="wx u-border-bottom">
@@ -153,6 +153,7 @@
     data(){
       return {
         flag:-1,
+        nprice:1,
         tprice:0.02,
         xuanzhong:'1',
         num:10,
@@ -161,11 +162,6 @@
         }, {
           name: '企业套餐'
         }],
-        sex: [
-          {text: '男',value: 0},
-          {text: '女',value: 1},
-          {text: '未知',value: 2}
-        ],
         kai:{
           display:'flex',
           flexDirection:'column',
@@ -193,6 +189,7 @@
       choseprofrom:function (id) {
         this.vip(id)
         this.flag = id;
+        console.log(this.flag)
       },
       async vip () {
         const { data: res } = await this.$request({
@@ -210,17 +207,17 @@
         const { data: res } = await this.$request({
           method: 'POST',
           data:{
-            token:token ,
+            token:token,
             pay_type:'wx',
-            product_name:1,
-            recipient:'一企查',
+            product_name:this.flag,
+            recipient:1,
             trade_type:'APP',
             notify_url:'http://pay.yiqiwang360.com/api/pay/wxNotify',
             buyer_id:'oRvQ859xuQo-VXB9fcR_hfyoPgd8'
           },
           url: 'applets/pay',
         })
-        // console.log(res)
+        console.log(res)
 
           // const data = res;
           let map= {
@@ -237,7 +234,7 @@
             // notify_url:'http://pay.yiqiwang360.com/api/pay/wxNotify'
           }
         // let orderInfo = JSON.stringify(map)
-        console.log(map)
+        // console.log(map)
         uni.requestPayment({
             provider: "wxpay",
             orderInfo: map,

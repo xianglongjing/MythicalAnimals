@@ -274,7 +274,7 @@
                 top="1600"
         ></u-back-top>
         <u-popup v-model="show" mode="center" style="border-radius: 20rpx" close-icon-pos="top-right" :closeable="true" length="78%">
-            <view style="padding:50rpx 0;text-align: center">
+            <view class="tiao" style="padding:50rpx 0;text-align: center">
                 <view style="color:white;font-size: 45rpx;font-weight: 600">我们共有三种服务</view>
                 <view style="margin-top:20rpx;letter-spacing:10rpx;font-weight: 600;font-size: 52rpx;color:#FBCA41">请选择您最需要的</view>
                 <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="cha">企仁企信查</u-button>
@@ -299,8 +299,7 @@
                     marginTop:"30rpx",
                     color:"#7F4308",
                     fontSize:"35rpx",
-                    height:'100rpx',
-                    background:'#FCF17E'
+                    height:'100rpx'
                 },
                 amapPlugin: null,
                 key: '35d32d635e17746f7054c71c8539a377',
@@ -546,6 +545,17 @@
         background: #E6181B;
         background-size: 100% auto;
         background-image: url("http://images.yiqiwang360.com/sanheyi/sanheyi.png");
+    }
+    /deep/.uicon-close{
+        top:720rpx !important;
+        right:240rpx !important;
+        font-size: 70rpx !important;
+    }
+    /deep/.tiao .u-btn{
+        border-radius: 20rpx;
+        background: #E6181B;
+        background-size: 100% auto;
+        background-image: url("http://images.yiqiwang360.com/qirenqixin/sanheyi2.png");
     }
     .page {
         background: #f8f8f8;

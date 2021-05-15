@@ -40,43 +40,10 @@
 <!--                </view>-->
 <!--            </view>-->
         </view>
-<!--        <view class="boss">-->
-<!--            <view class="u-margin-bottom-20 u-font-32">临沂热门老板</view>-->
-<!--            <view class="desc">-->
-<!--                <u-image src="http://images.yiqiwang360.com/yiqicha/renwu.png" width="60" height="60"></u-image>-->
-<!--                <view class="desc-r">-->
-<!--                   <view class="name">-->
-<!--                       <view class="u-font-30">张三</view>-->
-<!--                       <view class="num">他有15家公司</view>-->
-<!--                   </view>-->
-<!--                    <view>自身风险20条 周边风险812条 预警提醒122条</view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="desc">-->
-<!--                <u-image src="http://images.yiqiwang360.com/yiqicha/renwu.png" width="60" height="60"></u-image>-->
-<!--                <view class="desc-r">-->
-<!--                    <view class="name">-->
-<!--                        <view class="u-font-30">李四</view>-->
-<!--                        <view class="num">他有15家公司</view>-->
-<!--                    </view>-->
-<!--                    <view>自身风险20条 周边风险812条 预警提醒122条</view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--            <view class="desc">-->
-<!--                <u-image src="http://images.yiqiwang360.com/yiqicha/renwu.png" width="50" height="50"></u-image>-->
-<!--                <view class="desc-r">-->
-<!--                    <view class="name">-->
-<!--                        <view class="u-font-30">王小五</view>-->
-<!--                        <view class="num">他有15家公司</view>-->
-<!--                    </view>-->
-<!--                    <view>自身风险20条 周边风险812条 预警提醒122条</view>-->
-<!--                </view>-->
-<!--            </view>-->
-<!--        </view>-->
         </view>
         <u-empty src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" :show="emptyShow">
         </u-empty>
-        <view class="company" v-if="keyword!==''" :key="item.id" v-for="item in goodsList" @click="detail(item.id)">
+        <view class="company" v-if="keyword&&!emptyShow" :key="item.id" v-for="item in goodsList" @click="detail(item.id)">
             <view class="com-con">
                 <view class="com-top u-line-1 u-border-bottom u-padding-bottom-30">
                     <u-image mode="aspectFit" src="https://api.yiqiwang360.com/images/app/app_logo2.png" width="90" height="90"></u-image>
@@ -141,17 +108,20 @@
                 pageNum: 1,
                 loadStatus: 'nomore',
                 goodsList:[]
+
             }
         },
-        //到底部
+        // 到底部
         onReachBottom () {
-            // if (this.goodsList.length < this.pageNum * 10) return this.loadStatus = 'nomore'
+            if (this.goodsList.length < this.pageNum * 10) return this.loadStatus = 'more'
             this.pageNum++
-            // this.getSearchList()
+            this.getSearchList()
         },
         // 下拉刷新
         onPullDownRefresh () {
             this.pageNum = 1
+            // this.pageNum++
+            this.getSearchList()
             // this.goodsList = []
             // this.getSearchList(() => {
             //     uni.stopPullDownRefresh()
@@ -159,11 +129,18 @@
         },
         onLoad(){
             this.hotsearch()
-            // this.getSearchList()
+            this.keyword = options.keyword
         },
         methods:{
             goSearch(){
-                this.getSearchList()
+                if (this.keyword === '') return uni.showToast({
+                    title: '请输入关键词再搜索',
+                    icon: 'none',
+                    duration: 2000
+                })
+                if (this.keyword!=''){
+                    this.getSearchList();
+                }
             },
             async hotsearch () {
                 const { data: res } = await this.$request({
@@ -190,13 +167,16 @@
                     }
                 })
                 console.log(res)
-                this.goodsList = res
-                if (this.goodsList.length < res.total) {
-                    this.loadStatus = 'loadmore'
-                }
+                // this.goodsList = res
+                this.goodsList = [...this.goodsList, ...res]
                 // //判断全部为空的吸星大法
                 let dataNum = res.length
                 console.log(dataNum)
+                if (this.goodsList.length < res.total) {
+                    this.loadStatus = 'loading'
+                } else {
+                    this.loadStatus = 'nomore'
+                }
                 if(this.keyword==''){
                     this.emptyShow = false
                 }
@@ -208,12 +188,9 @@
             },
             clear(){
                 this.emptyShow = false
-                uni.removeStorage({
-                    key: 'keyword',
-                    success() {
-                        console.log('删除成功')
-                    }
-                })
+                this.pageNum = 1
+                this.goodsList=[]
+                // this.getSearchList()
             },
             detail(id){
                 uni.navigateTo({

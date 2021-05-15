@@ -990,6 +990,14 @@
       }
     },
     {
+      "path": "pages/company/protect",
+      "style": {
+        "navigationBarTitleText": "环保处罚",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/yearreport",
       "style": {
         "navigationBarTitleText": "企业年报",

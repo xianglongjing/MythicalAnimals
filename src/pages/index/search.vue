@@ -48,7 +48,7 @@
                     </view>
                 </view>
             </view>
-<!--                <view class="brand" v-for="(item2,index) in trademark" :key="item2.id">-->
+<!--                <view class="brand" v-for="(item2,index) in trademark" :key="'a'+item2.id">-->
 <!--                    <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/lianjie.png" width="30" height="30"></u-image>-->
 <!--                    <view class="u-margin-left-10">-->
 <!--                        商标信息:-->
@@ -79,7 +79,6 @@
                 pageNum: 1,
                 loadStatus: 'more',
                 goodsList: [],
-                goodlist:[],
                 trademark:[],
                 partner:[],
                 emptyShow:false,
@@ -100,7 +99,6 @@
             this.pageNum = 1
             // this.pageNum++
             this.getSearchList()
-            // this.goodsList = []
             // this.getSearchList(() => {
             //     uni.stopPullDownRefresh()
             // })
@@ -126,26 +124,14 @@
                         }
                     })
                     console.log(res)
-                    this.goodsList = res
-                    // this.goodsList = [...this.goodsList, ...res]
+                    this.goodsList = [...this.goodsList, ...res]
                     console.log([...this.goodsList, ...res])
-                    // this.goodsList = this.goodsList.concat(res)
                     this.partner = res.partner
                     if (this.goodsList.length < res.total) {
                         this.loadStatus = 'loading'
                     } else {
                         this.loadStatus = 'nomore'
                     }
-                    // callBack && callBack()
-                    // this.qualityList = res.data.quality
-                    // this.personList = res.data.person
-                    // this.discussList = res.data.discuss
-                    // if (res.data.content) {
-                    //     this.newsList = res.data.content
-                    // } else {
-                    //     this.newsList = []
-                    // }
-                    // //判断全部为空的吸星大法
                     let dataNum = res.length
                     console.log(dataNum)
                     if(this.keyword==''){
@@ -159,14 +145,9 @@
                 },
             clear(){
                 this.emptyShow = false
-                uni.removeStorage({
-                    key: 'keyword',
-                    success() {
-                        console.log('删除成功')
-                    }
-                })
-                this.pageNum = 0
-                this.getSearchList()
+                this.pageNum = 1
+                this.goodsList=[]
+                // this.getSearchList()
             },
             shopDetail(id){
                 uni.navigateTo({
