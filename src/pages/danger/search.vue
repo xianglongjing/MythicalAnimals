@@ -75,7 +75,66 @@
                 </view>
                 <view class="u-margin-top-20">
                     <text>风险总数：</text>
+                    <text>{{total}}条</text>
+                </view>
+                <view class="tips">
+                    <view class="item">
+                        <view>
+                            <text>自身风险</text>
+                            <text class="num">{{item.ownrisk}}条</text>
+                        </view>
+                        <view>{{item.ownrisk ? '' : '暂无自身风险'}}</view>
+                    </view>
+                    <view class="item">
+                        <view>
+                            <text>周边风险</text>
+                            <text class="num">{{item.peripheralrisk}}条</text>
+                        </view>
+                        <view>{{item.peripheralrisk ? '' : '暂无周边风险'}}</view>
+                    </view>
+                    <view class="item">
+                        <view>
+                            <text>预警提醒</text>
+                            <text class="num">{{item.warning}}条</text>
+                        </view>
+                        <view>{{item.warning ? '' : '暂无预警提醒'}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view v-if="current==1&&emptyShow==false">
+            <view class="con" @click="person(personslist.idcard)">
+                <view class="flex">
+                    <u-image border-radius="10" height="70" width="70" src="../../static/image/mao.png"></u-image>
+                    <text class="u-margin-left-20">{{personslist.name}}</text>
+                </view>
+                <view class="u-margin-top-20">
+                    <text>风险总数：</text>
                     <text>0条</text>
+                </view>
+                <view class="tips">
+
+                    <view class="item">
+                        <view>
+                            <text>自身风险</text>
+                            <text class="num">{{personslist.ownrisk}}条</text>
+                        </view>
+                        <view>{{personslist.ownrisk ? '' : '暂无自身风险'}}</view>
+                    </view>
+                    <view class="item">
+                        <view>
+                            <text>周边风险</text>
+                            <text class="num">{{personslist.peripheralrisk}}条</text>
+                        </view>
+                        <view>{{personslist.peripheralrisk ? '' : '暂无周边风险'}}</view>
+                    </view>
+                    <view class="item">
+                        <view>
+                            <text>预警提醒</text>
+                            <text class="num">{{personslist.warning}}条</text>
+                        </view>
+                        <view>{{personslist.warning ? '' : '暂无预警提醒'}}</view>
+                    </view>
                 </view>
             </view>
         </view>
@@ -92,8 +151,10 @@
                    color:'black'
                 },
                 keyword:'',
+                total:0,
                 pageNum: 1,
                 goodsList:{},
+                personslist:[],
                 list: [{
                     name: '公司风险'
                 }, {
@@ -105,13 +166,19 @@
         onLoad (options) {
         },
         methods:{
-            detail(id){
+            person(id){
                 uni.navigateTo({
-                    url:'/pages/danger/shopDetail?id='+id
+                    url:'/pages/danger/manDetail?id='+id
                 })
             },
+            // detail(id){
+            //     uni.navigateTo({
+            //         url:'/pages/danger/shopDetail?id='+id
+            //     })
+            // },
             goSearch(){
                 this.getSearchList()
+                this.personList()
             },
             Change(index) {
                 this.current = index;
@@ -151,15 +218,44 @@
                     this.current==1
                 }
             },
+            async personList () {
+                const { data: res } = await this.$request({
+                    method:'POST',
+                    url: 'applets/risk',
+                    data: {
+                        keyword: this.keyword,
+                        page:this.pageNum,
+                        type:false
+                    }
+                })
+                console.log(res)
+                this.personslist = res
+                // //判断全部为空的吸星大法
+                // let dataNum = res.length
+                // console.log(dataNum)
+                if(this.keyword==''){
+                    this.emptyShow = false
+                }
+                // if (dataNum>=1){
+                //     this.emptyShow = false
+                // }else{
+                //     this.emptyShow = true
+                // }
+                // if(this.type=true){
+                //     this.current==0
+                // }else{
+                //     this.current==1
+                // }
+            },
             goBack(){
                 uni.navigateBack({
                     delta: 1
                 });
             },
-            shop(){
-                uni.navigateTo({
-                    url:'/pages/danger/shopDetail'
-                })
+            detail(id){
+                    uni.navigateTo({
+                        url:'/pages/danger/shopDetail?id='+id
+                    })
             },
             man(){
                 uni.navigateTo({
@@ -187,12 +283,31 @@
     }
     .con{
         line-height: 55rpx;
-        padding:30rpx;
+        padding:30rpx 20rpx;
         border-radius: 10rpx;
         background: white;
         margin:30rpx;
         .flex{
             align-items: center;
+        }
+        .tips{
+            display: flex;
+            height:160rpx;
+            justify-content: center;
+            .item{
+                background: #f8f8f8;
+                flex-grow: 1;
+                margin-right: 10rpx;
+                padding:10rpx 0;
+                .num{
+                    color:#fd5123;
+                    border:1rpx solid #FD5123;
+                    background: #FDCDC9;
+                    padding:7rpx 18rpx;
+                    border-radius: 10rpx;
+                    margin-left:10rpx;
+                }
+            }
         }
     }
     .shops{

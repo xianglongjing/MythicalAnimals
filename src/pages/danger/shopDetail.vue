@@ -32,7 +32,7 @@
                     <text class="title">开庭公告</text>
                     <text class="warn">警示信息信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="opencourtD(company.id,item.id)">
+                <view class="item2 u-border-bottom" @click="opencourtD(item.id,item.status)">
                     <text>该公司 <text class="red">{{item.status}}</text>的开庭公告</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -42,7 +42,7 @@
                     <text class="title">法律诉讼</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="lawD(company.id,item.id)">
+                <view class="item2 u-border-bottom" @click="lawD(item.id,item.cause)">
                     <text>该公司曾因<text class="red">{{item.cause}}</text>而被起诉</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -52,7 +52,7 @@
                     <text class="title">法院公告</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="courtD(company.id,item.id)">
+                <view class="item2 u-border-bottom" @click="courtD(item.id,item.status)">
                     <text>该公司<text class="red">{{item.status}}</text>的法院公告</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -62,7 +62,7 @@
                     <text class="title">送达公告</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="rulingD(company.id,item.id)">
+                <view class="item2 u-border-bottom" @click="rulingD(item.id,item.status)">
                     <text>该公司<text class="red">{{item.status}}</text>的送达公告</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -72,7 +72,7 @@
                     <text class="title">立案信息</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="registerD(company.id,item.id)">
+                <view class="item2 u-border-bottom" @click="registerD(item.id,item.status)">
                     <text>该公司<text class="red">{{item.status}}</text>的立案信息</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -82,7 +82,7 @@
                     <text class="title">行政处罚</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="penaltiesD(company.id,item.id)">
+                <view class="item2 u-border-bottom" @click="penaltiesD(item.id,item.status)">
                     <text>该公司<text class="red">{{item.status}}</text>的行政处罚</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -249,7 +249,7 @@
                     <text class="title">开庭公告</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="go('company/kaiting?id='+item.id+'&cid=' + item.cid)">
+                <view class="item2 u-border-bottom" @click="go('company/kaiting?id='+item.id+'&type=' + item.corporate.id)">
                     <text>该公司投资的<text class="red" @click="go('index/chashop?id='+item.corporate.id)">{{item.corporate.cpyname}}</text>{{item.status}}的开庭公告</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -259,7 +259,7 @@
                     <text class="title">法律诉讼</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="go('company/lawsus?id='+item.id+'&cid=' + item.cid)">
+                <view class="item2 u-border-bottom" @click="go('company/lawsus?id='+item.id+'&type=' + item.corporate.id)">
                     <text>该公司投资的
                         <text class="red" @click="go('index/chashop?id='+item.corporate.id)">
 
@@ -271,12 +271,12 @@
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
             </view>
-            <view class="con u-margin-top-30" v-if="nearcon.dishonest" v-for="item in nearcon.dishonest" :key="item.id">
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in nearcon.dishonest" :key="item.id">
                 <view class="item u-border-bottom">
                     <text class="title">失信被执行人</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom"  @click="go('company/shixinbeizhixingren?id='+item.id+'&cid=' + item.cid)">
+                <view class="item2 u-border-bottom"  @click="go('company/shixinbeizhixingren?id='+item.id+'&type=' + item.corporate.id)">
                     <text style="flex:1">该公司投资的<text class="red" @click="go('index/chashop?id='+item.corporate.id)">{{item.corporate.cpyname}}</text>有失信被执行人信息</text>
                     <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
@@ -336,7 +336,7 @@
                     <text class="title">送达公告</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="go('company/songdagongg?id='+item.id+'&cid=' + item.cid)">
+                <view class="item2 u-border-bottom" @click="go('company/songdagongg?id='+item.id+'&type=' + item.corporate.id)">
                     <text>该公司投资的
                         <text class="red" @click="go('index/chashop?id='+item.corporate.id)">
                             {{item.corporate.cpyname}}
@@ -351,7 +351,7 @@
                     <text class="title">立案信息</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="go('company/lianxinxi?id='+item.id+'&cid=' + item.cid)">
+                <view class="item2 u-border-bottom" @click="go('company/lianxinxi?id='+item.id+'&type=' + item.corporate.id)">
                     <text>该公司投资的
                         <text class="red" @click="go('index/chashop?id='+item.corporate.id)">
                             {{item.corporate.cpyname}}
@@ -366,7 +366,7 @@
                     <text class="title">经营异常</text>
                     <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom" @click="go('company/jingyingyichang?id='+item.id+'&cid=' + item.cid)">
+                <view class="item2 u-border-bottom" @click="go('company/jingyingyichang?id='+item.id+'&type=' + item.corporate.id)">
                     <text>该公司投资的
                         <text class="red" @click="go('index/chashop?id='+item.corporate.id)">
                             {{item.corporate.cpyname}}
@@ -462,7 +462,7 @@
                 }, {
                     name: '预警提醒'
                 }],
-                current: 2,
+                current: 0,
                 emptyShow:false,
                 themeColor: '#E8544A',
                 filterResult: '',
@@ -538,6 +538,7 @@
                         id:id
                     }
                 })
+                console.log(res)
                 this.risk=res.risk
                 this.company=res.company
                 this.opencourt=res.risk.opencourt
@@ -578,27 +579,6 @@
                 this.warncon=res
                 this.ass=res.associate
                 console.log(res)
-            },
-            // 开庭公告
-            opencourtD(id,type){
-                console.log(id,type)
-                uni.navigateTo({
-                    url:'/pages/company/kaiting?id='+id+'&type=' + type,
-                })
-            },
-            // 法律诉讼
-            lawD(id,type){
-                console.log(id,type)
-                uni.navigateTo({
-                    url:'/pages/company/lawsus?id='+id+'&type=' + type,
-                })
-            },
-            // 法院公告
-            courtD(id,type){
-                console.log(id,type)
-                uni.navigateTo({
-                    url:'/pages/company/lawgongg?id='+id+'&type=' + type,
-                })
             },
             // 送达公告
             rulingD(id,type){

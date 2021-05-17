@@ -14,31 +14,314 @@
             <view class="content">
                 <sl-filter :themeColor="themeColor" :menuList="menuList" @result="result"></sl-filter>
             </view>
-            <view class="con u-margin-top-30">
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.opencourt" :key="item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">开庭公告</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom" @click="go('company/kaiting?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red" @click="go('index/chashop?id='+item.corporate.id)">{{item.corporate.cpyname}}</text>
+                       <text class="blue">{{item.status}}</text>
+                    的开庭公告</text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.proceedings" :key="'a-'+item.cid">
                 <view class="item u-border-bottom">
                     <text class="title">法律诉讼</text>
-                    <text class="warn">高风险</text>
+                    <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom">
-                    <view @click="go">
-                        <text>该老板在成都锤子科技集团有限公司(有限合作)</text>
-                        <view class="red">有股权冻结信息</view>
-                    </view>
-                    <text class="gray">共2条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                <view class="item2 u-border-bottom" @click="go('company/lawsus?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red" @click="go('index/chashop?id='+item.corporate.id)">
+
+                            {{item.corporate.cpyname}}
+
+                        </text>
+                        <text class="blue">{{item.cause}}</text> 的法律诉讼
+                    </text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
                 </view>
-                <view class="item2 u-border-bottom">
-                    <view @click="go">
-                        <text>该老板在成都锤子科技集团有限公司(有限合作)</text>
-                        <view class="red">有股权冻结信息</view>
-                    </view>
-                    <view class="gray">共2条 <u-icon name="arrow-right" size="26"></u-icon></view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.court" :key="'b-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">法院公告</text>
+                    <text class="warn">警示信息</text>
                 </view>
-                <view class="item2 u-border-bottom">
-                    <view>
-                        <text>该老板在成都锤子科技集团有限公司(有限合作)</text>
-                        <view class="red">有股权冻结信息</view>
+                <view class="item2 u-border-bottom" @click="go('company/lawgongg?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        <text class="blue">{{item.status}}</text>的法院公告</text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.consumption" :key="'c-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">限制消费令</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom" @click="go('company/xianzhixiaofeiling?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                     有限制消费令信息</text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.cases" :key="'d-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">终本案件</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom" @click="go('company/zhongbenanjian?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有终本案件信息</text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                </view>
+            </view>
+                <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.dishonest" :key="'e-'+item.id">
+                    <view class="item u-border-bottom">
+                        <text class="title">失信被执行人</text>
+                        <text class="warn">警示信息</text>
                     </view>
-                    <view class="gray">共2条 <u-icon name="arrow-right" size="26"></u-icon></view>
+                    <view class="item2 u-border-bottom" @click="go('company/shixinbeizhixingren?id='+item.id+'&type=' + item.corporate.id)">
+                        <text class="one">该老板在
+                            <text class="red">{{item.corporate.cpyname}}</text>
+                            有失信被执行人信息</text>
+                        <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                    </view>
+                </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.debtor" :key="'f-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">被执行人</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom" @click="go('company/beiman?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有被执行人信息</text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.auction" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">司法拍卖</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom" @click="go('company/sifapaimai?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有司法拍卖信息</text>
+                    <text class="gray">共{{item.quantity}}条 <u-icon name="arrow-right" size="26"></u-icon></text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.ruling" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">送达公告</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/songdagongg?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        <text class="blue">{{item.status}}</text>的送达公告
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.register" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">立案信息</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/lianxinxi?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        <text>{{item.status}}</text>的立案信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.bankruptcy" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">破产重整</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/pochanchongzheng?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有破产重整信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.Inquiry" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">询价评估</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/xunjiapinggu?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有询价评估信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.business" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">经营异常</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/jingyingyichang?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有经营异常信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.penalties" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">行政处罚</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/xingzchufa?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        <text>{{item.status}}</text>的行政处罚
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.seriouslyillegal" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">严重违法</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/yanzhongweifa?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有严重违法信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.pledge" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">股权出质</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/guquanchuzhi?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有股权出质信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.equity" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">股权质押</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/guquanzhiya?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有股权质押信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.protection" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">环保处罚</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/protect?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有环保处罚信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.arrears" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">欠税公告</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/qianshuigonggao?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有欠税公告信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.mortgage" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">动产抵押</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/dongchandiya?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有动产抵押信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
+                </view>
+            </view>
+            <view class="con u-margin-top-30" v-if="item.quantity" v-for="item in mycon.notice" :key="'e-'+item.id">
+                <view class="item u-border-bottom">
+                    <text class="title">公示催告</text>
+                    <text class="warn">警示信息</text>
+                </view>
+                <view class="item2 u-border-bottom"
+                      @click="go('company/gongshicuigao?id='+item.id+'&type=' + item.corporate.id)">
+                    <text class="one">该老板在
+                        <text class="red">{{item.corporate.cpyname}}</text>
+                        有公示催告信息
+                    </text>
+                    <text class="gray">共{{item.quantity}}条
+                        <u-icon name="arrow-right" size="26"></u-icon>
+                    </text>
                 </view>
             </view>
         </view>
@@ -54,6 +337,7 @@
         },
         data(){
             return {
+                mycon:{},
                 list: [{
                     name: '自身风险'
                 }, {
@@ -121,11 +405,119 @@
                 ]
             }
         },
+        onLoad(options){
+            this.myself(options.id)
+        },
         methods:{
-            go(){
-                uni.navigateTo({
-                    url:'/pages/danger/freeze'
+            async myself (id) {
+                // this.pageNum++
+                const { data: res } = await this.$request({
+                    method: 'GET',
+                    url: 'applets/grriskdetails',
+                    data: {
+                        id:id
+                    }
                 })
+                console.log(res)
+                this.mycon=res
+            },
+            //立案信息
+            registerD(id,type){
+                console.log(id,type)
+                uni.navigateTo({
+                    url:'/pages/company/lianxinxi?id='+id+'&type=' + type,
+                })
+            },
+            // 询价评估
+            InquiryD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/xunjiapinggu?id='+id,
+                })
+            },
+            // 经营异常
+            busD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/jingyingyichang?id='+id,
+                })
+            },
+            // 破产重整
+            bankD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/pochanchongzheng?id='+id,
+                })
+            },
+            //行政处罚
+            penaltiesD(id,type){
+                console.log(id,type)
+                uni.navigateTo({
+                    url:'/pages/company/xingzchufa?id='+id+'&type=' + type,
+                })
+            },
+            //限制消费令
+            consumD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/xianzhixiaofeiling?id='+id,
+                })
+            },
+            //终本案件
+            casesD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/zhongbenanjian?id='+id,
+                })
+            },
+            //失信被执行人
+            dishonestD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/shixinbeizhixingren?id='+id,
+                })
+            },
+            //被执行人
+            debtorD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/beiman?id='+id,
+                })
+            },
+            //司法拍卖
+            auctionD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/sifapaimai?id='+id,
+                })
+            },
+            //严重违法
+            seriousD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/yanzhongweifa?id='+id,
+                })
+            },
+            //股权出质
+            pledgeD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/guquanchuzhi?id='+id,
+                })
+            },
+            //股权质押
+            equityD(id){
+                console.log(id)
+                uni.navigateTo({
+                    url:'/pages/company/guquanzhiya?id='+id,
+                })
+            },
+            go (path) {
+                let name = path
+                let nameArr = name.split('=')
+                uni.navigateTo(
+                    { url: '/pages/' + path }
+                )
             },
             change(index) {
                 this.current = index;
@@ -149,6 +541,9 @@
     .red{
         color:#E75D54;
     }
+    .blue{
+        color:#1283E1;
+    }
 .tou{
     display: flex;
     align-items: center;
@@ -159,23 +554,24 @@
     .con{
         background: white;
         .item{
-            padding:25rpx 30rpx;
+            padding:30rpx;
             .warn{
-                border:1rpx solid #E75D54;
-                color:#E75D54;
-                padding:2rpx 9rpx;
+                background: #FDF5EE;
+                /*border:1rpx solid #EFCF7E;*/
+                color:#EFCF7E;
+                padding:7rpx 12rpx;
                 font-size: 24rpx;
                 margin-left:10rpx;
                 border-radius: 10rpx;
             }
         }
         .item2{
-            font-size: 26rpx;
-            line-height: 45rpx;
-            padding:25rpx 30rpx;
+            padding:30rpx;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            .one{
+                flex:1;
+            }
         }
     }
 </style>

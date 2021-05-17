@@ -16,7 +16,7 @@
                 </view>
             </uni-nav-bar>
         </view>
-        <view class="list">
+        <view class="list" v-if="keyword">
             <view style="width:70%;margin:0 auto">
             <u-tabs
                     :list="newList"
@@ -138,6 +138,7 @@
                     }
                 }).then(res=>{
                     console.log(res)
+                    this.current=0
                     this.person = res.data
                     let dataNum = res.length
                     console.log(dataNum)
@@ -151,12 +152,6 @@
                     }else{
                         this.current=1
                     }
-                    // if(this.keyword){
-                    //     uni.navigateTo({
-                    //         url: '/pages/ll/searchDetail?keyword=' + this.keyword
-                    //     })
-                    // }
-
 
                 }) .catch(function (error) {
                     console.log(error);
@@ -165,11 +160,11 @@
                 this.qualityList = res.data.quality
                 this.personList = res.data.person
                 this.discussList = res.data.discuss
-                if (res.data.content) {
-                    this.newsList = res.data.content
-                } else {
-                    this.newsList = []
-                }
+                // if (res.content) {
+                //     this.newsList = res.content
+                // } else {
+                //     this.newsList = []
+                // }
                 //判断全部为空的吸星大法
 
             },
@@ -184,6 +179,7 @@
                     }
                 }).then(res=>{
                     console.log(res)
+                    this.current=1
                     this.goodsList = res.data
                     let dataNum = res.length
                     console.log(dataNum)
@@ -195,11 +191,11 @@
                 }) .catch(function (error) {
                     console.log(error);
                 });
-                if (res.data.content) {
-                    this.newsList = res.data.content
-                } else {
-                    this.newsList = []
-                }
+                // if (res.content) {
+                //     this.newsList = res.data.content
+                // } else {
+                //     this.newsList = []
+                // }
                 //判断全部为空的吸星大法
 
             },
