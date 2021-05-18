@@ -96,6 +96,12 @@
         onLoad (options) {
             this.getshopList(options.id)
         },
+        //下拉刷新
+        onPullDownRefresh() {
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
         methods:{
             async getshopList (id) {
                 const res  =await this.$request({

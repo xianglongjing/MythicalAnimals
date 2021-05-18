@@ -5,49 +5,49 @@
             <view class="services-items">
                 <view class="services-item" @click="go('ll/llai')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/laolai.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/laolai.png"></image>
                     </view>
                 <view class="item-title">查老赖</view>
                 </view>
                 <view class="services-item" @click="go('index/phone')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/dianhua.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/dianhua.png"></image>
                     </view>
                     <view class="item-title">找电话</view>
                 </view>
                 <view class="services-item" @click="kaifa">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/laoban.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/laoban.png"></image>
                     </view>
                     <view class="item-title">身边老板</view>
                 </view>
                 <view class="services-item" @click="go('index/nearshop')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/gongsi.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/gongsi.png"></image>
                     </view>
                     <view class="item-title">附近公司</view>
                 </view>
                 <view class="services-item" @click="go('index/global')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/quanqiu.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/quanqiu.png"></image>
                     </view>
                     <view class="item-title">全球企业</view>
                 </view>
                 <view class="services-item" @click="go('index/shangbiao')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/shangbiao.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/shangbiao.png"></image>
                     </view>
                     <view class="item-title">查商标</view>
                 </view>
                 <view class="services-item" @click="go('index/danger')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/fengxian.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/fengxian.png"></image>
                     </view>
                     <view class="item-title">查风险</view>
                 </view>
                 <view class="services-item" @click="go('index/beian')">
                     <view class="item-img">
-                        <image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/beian.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/beian.png"></image>
                     </view>
                     <view class="item-title">查备案</view>
                 </view>
@@ -173,6 +173,12 @@
             return {
 
             }
+        },
+        //下拉刷新
+        onPullDownRefresh() {
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
         },
         methods:{
             go (path) {

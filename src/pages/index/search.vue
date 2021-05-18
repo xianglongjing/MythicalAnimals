@@ -99,11 +99,14 @@
             this.pageNum = 1
             // this.pageNum++
             this.getSearchList()
+            let that = this
+            setTimeout(function() {
+                uni.stopPullDownRefresh();
+            }, 1000);
             // this.getSearchList(() => {
             //     uni.stopPullDownRefresh()
             // })
         },
-
         methods:{
             goSearch(){
                 if (this.keyword === '') return uni.showToast({

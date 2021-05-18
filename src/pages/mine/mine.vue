@@ -355,7 +355,7 @@ page {
 .page {
   .userinfo {
     position: relative;
-    background: url("https://yiqiwang360.com/images/yiqicha/beijing.png"),
+    background: url("https://images.yiqiwang360.com/qirenqixin/yiqicha/beijing.png"),
       linear-gradient(90deg, #ff2b0f, #fd5b29);
     background-size: cover;
     background-repeat: no-repeat;

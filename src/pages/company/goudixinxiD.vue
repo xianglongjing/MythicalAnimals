@@ -187,6 +187,7 @@
             .item{
                 width:50%;
                 align-items: center;
+                margin:20rpx 0;
                 justify-content: space-between;
             }
         }

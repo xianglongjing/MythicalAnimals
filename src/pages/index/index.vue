@@ -3,6 +3,7 @@
     <view class="redbg">
         <view class="zi">
             <view class="banner u-margin-bottom-50">
+<!--              http://images.yiqiwang360.com/yiqicha/fangdajing.png-->
                 <u-image src="http://images.yiqiwang360.com/yiqicha/fangdajing.png" width="50" height="50"></u-image>
                 <view class="name u-padding-right-20">一企查</view>
                 <view class="u-margin-left-20 u-font-22">
@@ -121,51 +122,51 @@
     <view class="types">
       <view class="ty-zong">
       <view class="types-con" @click="go('ll/llai')">
-        <u-image src="https://yiqiwang360.com/images/yiqicha/laolai.png" mode="aspectFill" height="80" width="80"></u-image>
+        <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/laolai.png" mode="aspectFill" height="80" width="80"></u-image>
         <text>查失信</text>
       </view>
       <view class="types-con" @click="go('index/phone')">
-        <u-image src="https://yiqiwang360.com/images/yiqicha/dianhua.png" mode="aspectFill" height="80" width="80"></u-image>
+        <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/dianhua.png" mode="aspectFill" height="80" width="80"></u-image>
         <text>找电话</text>
       </view>
       <view class="types-con" @click="go('index/nearboss')">
-        <u-image src="https://yiqiwang360.com/images/yiqicha/laoban.png" mode="aspectFill" height="80" width="80"></u-image>
+        <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/laoban.png" mode="aspectFill" height="80" width="80"></u-image>
         <text>身边老板</text>
       </view>
       <view class="types-con" @click="go('index/nearshop')">
-        <u-image src="https://yiqiwang360.com/images/yiqicha/gongsi.png" mode="aspectFill" height="80" width="80"></u-image>
+        <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/gongsi.png" mode="aspectFill" height="80" width="80"></u-image>
         <text>附近公司</text>
       </view>
       <view class="types-con" @click="kaifa">
-        <u-image src="https://yiqiwang360.com/images/yiqicha/gaojisousuo.png" mode="aspectFill" height="80" width="80"></u-image>
+        <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/gaojisousuo.png" mode="aspectFill" height="80" width="80"></u-image>
         <text>高级搜索</text>
       </view>
       </view>
       <view class="ty-zong">
         <view class="types-con" @click="go('index/global')">
-          <u-image src="https://yiqiwang360.com/images/yiqicha/quanqiu.png" mode="aspectFill" height="80" width="80"></u-image>
+          <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/quanqiu.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>全球企业</text>
         </view>
         <view class="types-con" @click="go('index/shangbiao')">
-          <u-image src="https://yiqiwang360.com/images/yiqicha/shangbiao.png" mode="aspectFill" height="80" width="80"></u-image>
+          <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/shangbiao.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>查商标</text>
         </view>
         <view class="types-con" @click="go('index/danger')">
-          <u-image src="https://yiqiwang360.com/images/yiqicha/fengxian.png" mode="aspectFill" height="80" width="80"></u-image>
+          <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/fengxian.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>查风险</text>
         </view>
         <view class="types-con" @click="go('index/beian')">
-          <u-image src="https://yiqiwang360.com/images/yiqicha/beian.png" mode="aspectFill" height="80" width="80"></u-image>
+          <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/beian.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>查备案</text>
         </view>
         <view class="types-con" @click="go('index/tservice')">
-          <u-image src="https://yiqiwang360.com/images/yiqicha/quanbu.png" mode="aspectFill" height="80" width="80"></u-image>
+          <u-image src="https://images.yiqiwang360.com/qirenqixin/yiqicha/quanbu.png" mode="aspectFill" height="80" width="80"></u-image>
           <text>全部</text>
         </view>
       </view>
     </view>
     <view class="gg">
-      <image mode="aspectFill" src="https://yiqiwang360.com/images/yiqicha/zhaoshang.png"
+      <image mode="aspectFill" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/zhaoshang.png"
              style="width:100%;height:150rpx;"></image>
     </view>
     <view class="new">
@@ -522,7 +523,7 @@ page {
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: bottom;
-    background-image: url("https://yiqiwang360.com/images/yiqicha/beijing.png");
+    background-image: url("https://images.yiqiwang360.com/qirenqixin/yiqicha/beijing.png");
     position: relative;
     color:white;
     padding:50rpx+var(--status-bar-height) 0 0;

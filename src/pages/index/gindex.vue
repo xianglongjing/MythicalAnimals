@@ -206,7 +206,15 @@
         onShow () {
         },
         // 下拉刷新
-        onPullDownRefresh () {
+
+        onPullDownRefresh() {
+            // this.getBasicInfo()
+            let that = this
+            setTimeout(function() {
+                uni.stopPullDownRefresh();
+            }, 1500);
+
+
         },
         methods: {
             // 获取本地存储

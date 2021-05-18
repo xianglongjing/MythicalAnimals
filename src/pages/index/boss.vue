@@ -1,5 +1,4 @@
 
-
 <template>
     <view class="page">
         <uni-nav-bar :status-bar="true" left-icon="back" :fixed="true" :border="false" :shadow="false" @clickLeft="goBack">
@@ -23,7 +22,7 @@
         <view class="company" :key="item.id" v-for="item in goodsList">
             <view class="com-con">
                 <view class="com-top u-line-1 u-border-bottom u-padding-bottom-30">
-                    <u-image mode="aspectFit" src="https://yiqiwang360.com/images/yiqicha/beian.png" width="90" height="90"></u-image>
+                    <u-image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/yiqicha/beian.png" width="90" height="90"></u-image>
                     <view class="con-r">
                         <view class="name u-margin-bottom-10">{{item.corporate.cpyname}}</view>
                         <view class="u-margin-top-10 u-margin-bottom-10">
@@ -78,6 +77,17 @@
             this.getSearchList()
         },
         methods:{
+            // 下拉刷新
+
+            onPullDownRefresh() {
+                // this.getBasicInfo()
+                let that = this
+                setTimeout(function() {
+                    uni.stopPullDownRefresh();
+                }, 1500);
+
+
+            },
             goSearch(){
                 this.getSearchList()
             },

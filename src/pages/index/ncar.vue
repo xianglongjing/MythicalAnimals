@@ -97,7 +97,13 @@
                     margin:'0'
                 }
             }
-        }
+        },
+        //下拉刷新
+        onPullDownRefresh() {
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
     }
 </script>
 <style lang="scss">

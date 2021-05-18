@@ -421,42 +421,6 @@
                 </u-grid>
             </view>
             <view class="back">
-                <text class="title">企业发展</text>
-                <u-grid :col="4" style="margin-top:30rpx">
-                    <u-grid-item @click="go('company/rongzilicheng?id='+newsList.id)">
-                        <view class="num3">4</view>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan3.png" width="50" height="50"></u-image>
-                        <view class="grid-text">融资历程</view>
-                    </u-grid-item>
-                    <u-grid-item @click="go('company/touzishijian?id='+newsList.id)">
-                        <view class="num3"></view>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan4.png" width="50" height="50"></u-image>
-                        <view class="grid-text">投资事件</view>
-                    </u-grid-item>
-                    <u-grid-item @click="go('company/hexintuandui?id='+newsList.id)">
-                        <view class="num3"></view>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan6.png" width="50" height="50"></u-image>
-                        <view class="grid-text">核心团队</view>
-                    </u-grid-item>
-                    <u-grid-item @click="go('company/qiyeyewu?id='+newsList.id)">
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan7.png" width="50" height="50"></u-image>
-                        <view class="grid-text">企业业务</view>
-                    </u-grid-item>
-                    <u-grid-item @click="go('company/jingpinxinxi?id='+newsList.id)">
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan2.png" width="50" height="50"></u-image>
-                        <view class="grid-text">竞品信息</view>
-                    </u-grid-item>
-                    <u-grid-item @click="go('company/touzijigou?id='+newsList.id)">
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan5.png" width="50" height="50"></u-image>
-                        <view class="grid-text">投资机构</view>
-                    </u-grid-item>
-                    <u-grid-item @click="go('company/simujijin?id='+newsList.id)">
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyefazhan1.png" width="50" height="50"></u-image>
-                        <view class="grid-text">私募基金</view>
-                    </u-grid-item>
-                </u-grid>
-            </view>
-            <view class="back">
                 <text class="title">经营信息</text>
                 <u-grid :col="4" style="margin-top:30rpx">
                     <u-grid-item @click="go('company/zhaopininfo?id='+newsList.id)">
@@ -566,7 +530,21 @@
                                  height="50"></u-image>
                         <view class="grid-text">商业特许经营</view>
                     </u-grid-item>
-
+                    <u-grid-item @click="go('company/zichanjiaoyi?id='+newsList.id)">
+                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/jingyingxinxi11.png" width="50"
+                                 height="50"></u-image>
+                        <view class="grid-text">资产交易</view>
+                    </u-grid-item>
+                    <u-grid-item @click="go('company/xinyongpj?id='+newsList.id)">
+                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/jingyingxinxi11.png" width="50"
+                                 height="50"></u-image>
+                        <view class="grid-text">信用评级</view>
+                    </u-grid-item>
+                    <u-grid-item @click="go('company/shangbangbd?id='+newsList.id)">
+                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/jingyingxinxi11.png" width="50"
+                                 height="50"></u-image>
+                        <view class="grid-text">上榜榜单</view>
+                    </u-grid-item>
                 </u-grid>
             </view>
             <view class="back">
@@ -805,6 +783,17 @@
             this.grouplist()
         },
         methods:{
+            // 下拉刷新
+
+            onPullDownRefresh() {
+                // this.getBasicInfo()
+                let that = this
+                setTimeout(function() {
+                    uni.stopPullDownRefresh();
+                }, 1500);
+
+
+            },
             menuChange(index) {
                 this.current = index;
             },

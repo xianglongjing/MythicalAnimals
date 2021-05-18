@@ -82,6 +82,12 @@
                 keyword:''
             }
         },
+        //下拉刷新
+        onPullDownRefresh() {
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
         methods:{
             clear(){
                 this.goodsList=[]

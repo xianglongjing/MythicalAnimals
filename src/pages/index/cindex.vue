@@ -385,7 +385,10 @@
         // 下拉刷新
         onPullDownRefresh () {
             this.getIndex()
-
+            let that = this
+            setTimeout(function() {
+                uni.stopPullDownRefresh();
+            }, 1500);
         },
         methods: {
             cha(){

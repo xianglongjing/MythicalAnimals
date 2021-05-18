@@ -95,6 +95,16 @@
                     url:'/pages/danger/manDetail'
                 })
             },
+            // 下拉刷新
+
+            onPullDownRefresh() {
+                // this.getBasicInfo()
+                let that = this
+                setTimeout(function() {
+                    uni.stopPullDownRefresh();
+                }, 1500);
+
+            },
         },
 
 

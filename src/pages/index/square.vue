@@ -71,6 +71,12 @@
 
             }
         },
+        //下拉刷新
+        onPullDownRefresh() {
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
         onLoad () {
             this.getNewList();
             this.getNewList1();

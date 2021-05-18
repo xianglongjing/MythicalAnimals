@@ -5,8 +5,8 @@
                 <view class="inline-block u-border-bottom" style="width:100%;padding:20rpx">
                     <u-search
                             :action-style="search_btn"
-                            :animation="true"
-                            @custom="goSearch"
+                            :animation="true" @clear="clear"
+                            @custom="goSearch" clearabled
                             @search="goSearch"
                             bg-color="#f8f8f8"
                             input-align="left" style="width: 560rpx;height:30rpx; padding:30rpx 0;background: #f8f8f8"
@@ -15,8 +15,6 @@
                     ></u-search>
                 </view>
             </uni-nav-bar>
-            <u-empty src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" :show="emptyShow">
-            </u-empty>
             <view class="list u-padding-top-30" v-if="keyword&&emptyShow==false">
                 <view style="width:70%;margin:0 auto;text-align: center">
                     <u-tabs
@@ -68,6 +66,7 @@
 <!--            </view>-->
         </view>
         <view v-if="current==0&&emptyShow==false">
+
             <view class="con" v-for="item in goodsList" :key="item.id" @click="detail(item.id)">
                 <view class="flex">
                     <u-image border-radius="10" height="70" width="70" src="../../static/image/mao.png"></u-image>
@@ -101,8 +100,12 @@
                     </view>
                 </view>
             </view>
+            <u-empty src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" :show="emptyShow">
+            </u-empty>
         </view>
-        <view v-if="current==1&&emptyShow==false">
+        <view v-if="current==1&&emptyShows==false">
+            <u-empty src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" :show="emptyShows">
+            </u-empty>
             <view class="con" @click="person(personslist.idcard)">
                 <view class="flex">
                     <u-image border-radius="10" height="70" width="70" src="../../static/image/mao.png"></u-image>
@@ -147,6 +150,7 @@
             return {
                 his:{},
                 emptyShow:false,
+                emptyShows:false,
                 search_btn:{
                    color:'black'
                 },
@@ -189,7 +193,7 @@
                 //     this.type=false
                 // }
             },
-            async getSearchList (id) {
+            async getSearchList () {
                 const { data: res } = await this.$request({
                     method:'POST',
                     url: 'applets/risk',
@@ -200,6 +204,7 @@
                     }
                 })
                 console.log(res)
+                this.current=0
                 this.goodsList = res
                 // //判断全部为空的吸星大法
                 let dataNum = res.length
@@ -229,23 +234,35 @@
                     }
                 })
                 console.log(res)
+                this.current=1
                 this.personslist = res
                 // //判断全部为空的吸星大法
                 // let dataNum = res.length
                 // console.log(dataNum)
                 if(this.keyword==''){
-                    this.emptyShow = false
+                    this.emptyShows = false
                 }
-                // if (dataNum>=1){
-                //     this.emptyShow = false
-                // }else{
-                //     this.emptyShow = true
-                // }
+                if(this.type=true){
+                    this.current==0
+                }else{
+                    this.current==1
+                }
+                if (dataNum>=1){
+                    this.emptyShows = false
+                }else{
+                    this.emptyShows = true
+                }
                 // if(this.type=true){
                 //     this.current==0
                 // }else{
                 //     this.current==1
                 // }
+            },
+            clear(){
+                this.emptyShow = false
+                this.pageNum = 1
+                this.goodsList=[]
+                // this.getSearchList()
             },
             goBack(){
                 uni.navigateBack({

@@ -33,10 +33,10 @@
                 </view>
             </view>
         </view>
-            <view class="more">
-                <text>查看全部3条采购数据</text>
-                <u-icon name="arrow-right" color="#fd5123" size="32"></u-icon>
-            </view>
+<!--            <view class="more">-->
+<!--                <text>查看全部3条采购数据</text>-->
+<!--                <u-icon name="arrow-right" color="#fd5123" size="32"></u-icon>-->
+<!--            </view>-->
         </view>
     </view>
 </template>

@@ -73,6 +73,11 @@
             this.lawfirm()
             // this.shopList = shop
         },
+        onPullDownRefresh() {
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
         methods: {
             change(index) {
                 this.current = index;

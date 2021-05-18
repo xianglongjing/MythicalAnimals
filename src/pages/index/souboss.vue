@@ -122,6 +122,9 @@
             this.pageNum = 1
             // this.pageNum++
             this.getSearchList()
+            setTimeout(function () {
+                uni.stopPullDownRefresh();
+            }, 1000);
             // this.goodsList = []
             // this.getSearchList(() => {
             //     uni.stopPullDownRefresh()

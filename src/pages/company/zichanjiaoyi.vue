@@ -2,39 +2,34 @@
     <view class="page u-border-top">
         <u-empty text="暂无相关内容" mode="list" src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" :show="emptyShow">
         </u-empty>
-        <view class="con u-border-bottom">
-            <view class="left" v-for="item in goodsList" :key="item.id" @click="detail(item.id)">
+        <view class="zong u-border-bottom" v-for="item in goodsList" :key="item.id" @click="detail(item.id)">
+            <view class="title">{{item.title}}</view>
+            <view class="con">
+            <view class="left">
                 <view>
-                    <text class="gray">股东名称：</text>
-                    <text>{{item.pledger ? item.pledger : '-'}}</text>
+                    <text class="gray">项目类型：</text>
+                    <text>{{item.type ? item.type : '-'}}</text>
                 </view>
                 <view>
-                    <text class="gray">质押股份数量：</text>
-                    <text>{{item.nops ? item.nops : '-'}}</text>
+                    <text class="gray">交易价格：</text>
+                    <text>{{item.price ? item.price : '-'}}</text>
                 </view>
                 <view>
-                    <text class="gray">质押股份市值：</text>
-                    <text>{{item.nops ? item.nops : '-'}}</text>
+                    <text class="gray">标的方：</text>
+                    <text>{{item.party ? item.party : '-'}}</text>
                 </view>
                 <view>
-                    <text class="gray">占所持股份比例：</text>
-                    <text>{{item.nops ? item.nops : '-'}}</text>
+                    <text class="gray">转让/处置方：</text>
+                    <text>{{item.transfer ? item.transfer : '-'}}</text>
                 </view>
                 <view>
-                    <text class="gray">质押起止日期：</text>
-                    <text>{{item.psdate ? item.psdate : '-'}}至{{item.prdate ? item.prdate : '-'}}</text>
-                </view>
-                <view>
-                    <text class="gray">状态：</text>
-                    <text>{{item.status ? item.status : '-'}}</text>
-                </view>
-                <view>
-                    <text class="gray">公告日期：</text>
-                    <text>{{item.adate ? item.adate : '-'}}</text>
+                    <text class="gray">起始时间：</text>
+                    <text>{{item.start ? item.start : '-'}}</text>
                 </view>
             </view>
             <u-icon name="arrow-right" color="#959595" size="35"></u-icon>
         </view>
+    </view>
         <u-loadmore
                 color="#999999"
                 font-size="24"
@@ -83,7 +78,7 @@
         methods:{
             async getList (id) {
                 const { data: res } = await this.$request({
-                    url: 'applets/equity',
+                    url: 'applets/assettransaction',
                     data: {
                         id:id,
                         page:this.pageNum
@@ -104,23 +99,35 @@
                 }
             },
             detail(id){
-               uni.navigateTo({
-                   url:'/pages/company/guquanzhiyaD?id='+id
-               })
+                uni.navigateTo({
+                    url:'/pages/company/guquanzhiyaD?id='+id
+                })
             }
         }
     }
 </script>
-
+<style>
+    page{
+        background: #f8f8f8;
+    }
+</style>
 <style lang="scss" scoped>
     .gray{
         color:#959595;
     }
-.con{
-    padding:25rpx;
-    line-height: 50rpx;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+    .zong{
+        padding:25rpx;
+        background: white;
+        .title{
+            font-size: 36rpx;
+            padding:10rpx 0;
+        }
+        .con{
+            line-height: 50rpx;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
 </style>

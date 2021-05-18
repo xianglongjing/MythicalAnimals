@@ -1334,6 +1334,14 @@
       }
     },
     {
+      "path": "pages/company/guquanzhiyaD",
+      "style": {
+        "navigationBarTitleText": "股权质押详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/shuishouweifa",
       "style": {
         "navigationBarTitleText": "税收违法",
@@ -1606,6 +1614,38 @@
       }
     },
     {
+      "path": "pages/company/zhaiquanxinxiD",
+      "style": {
+        "navigationBarTitleText": "债券信息详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/xinyongpj",
+      "style": {
+        "navigationBarTitleText": "信用评级",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/xinyongpjD",
+      "style": {
+        "navigationBarTitleText": "中诚信评级报告",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/shangbangbd",
+      "style": {
+        "navigationBarTitleText": "上榜榜单",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/goudixinxi",
       "style": {
         "navigationBarTitleText": "购地信息",
@@ -1710,6 +1750,14 @@
       }
     },
     {
+      "path": "pages/company/dongchandiyaD",
+      "style": {
+        "navigationBarTitleText": "动产抵押详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/shixinbeizhixingren",
       "style": {
         "navigationBarTitleText": "失信被执行人",
@@ -1729,6 +1777,14 @@
       "path": "pages/company/yanzhongweifa",
       "style": {
         "navigationBarTitleText": "严重违法",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/zichanjiaoyi",
+      "style": {
+        "navigationBarTitleText": "资产交易",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FD5123"
       }
