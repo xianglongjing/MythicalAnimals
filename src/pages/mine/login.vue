@@ -3,7 +3,7 @@
 		<view class="content">
 			<view>
 				<view style="margin-left: -13rpx">
-					<text class="title text-black ">欢迎来到一企查</text>
+					<text class="title text-black ">欢迎来到企仁企信</text>
 					<view class="u-margin-top-30" style="color:#B4B5B5;font-size:33rpx;font-weight:650">登录</view>
 					<!-- last-child选择器-->
 				</view>

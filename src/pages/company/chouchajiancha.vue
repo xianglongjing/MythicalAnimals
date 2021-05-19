@@ -9,23 +9,33 @@
                     active-color="#E12216" bg-color="none" inactive-color="#000000"
             ></u-tabs>
         </view>
-        <view class="con">
-            <view>
-                <text class="gray">检查实施机关：</text>
-                <text>111111</text>
+        <view v-if="current==0">
+            <view class="con" v-for="item in con" :key="item.id">
+                <view>
+                    <text class="gray">检查实施机关：</text>
+                    <text>{{item.organ ? item.organ : '-'}}</text>
+                </view>
+                <view>
+                    <text class="gray">类型：</text>
+                    <text>{{item.type ? item.type : '-'}}</text>
+                </view>
+                <view>
+                    <text class="gray">结果：</text>
+                    <text>{{item.result ? item.result : '-'}}</text>
+                </view>
+                <view>
+                    <text class="gray">日期：</text>
+                    <text>{{item.date ? item.date : '-'}}</text>
+                </view>
             </view>
-            <view>
-                <text class="gray">类型：</text>
-                <text>111111</text>
-            </view>
-            <view>
-                <text class="gray">结果：</text>
-                <text>111111</text>
-            </view>
-            <view>
-                <text class="gray">日期：</text>
-                <text>111111</text>
-            </view>
+        </view>
+       <view v-if="current==1">
+           <u-empty text="暂无相关信息" mode="list" class="u-margin-30" :show="emptyShow">
+           </u-empty>
+       </view>
+        <view v-if="current==2">
+            <u-empty text="暂无相关信息" mode="list" class="u-margin-30" :show="emptyShow">
+            </u-empty>
         </view>
     </view>
 </template>
@@ -43,9 +53,25 @@
                         name: '认证监督司'
                     }],
                 current:0,
+                con:{},
+                emptyShow:true
             }
         },
+        onLoad(options){
+            this.list(options.id)
+        },
         methods:{
+            async list (id) {
+                const { data: res } = await this.$request({
+                    method: 'GET',
+                    data:{
+                        id:id
+                    },
+                    url: 'applets/survey',
+                })
+                console.log(res)
+                this.con=res
+            },
             Change(index) {
                 this.current = index;
             },

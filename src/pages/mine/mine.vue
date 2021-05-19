@@ -27,7 +27,7 @@
       <view class="flex">
         <u-image mode="aspectFill" src="http://images.yiqiwang360.com/yiqicha/wode/wode (14).png" width="45" height="45"></u-image>
         <view class="u-margin-left-20">
-          <view class="title">开通一企查VIP</view>
+          <view class="title">开通企仁企信VIP</view>
 
           <text class="u-font-25">众多VIP专享特权</text>
         </view>

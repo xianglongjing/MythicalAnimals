@@ -1,35 +1,35 @@
 <template>
     <view class="page u-border-top">
-        <view class="first">
+        <view class="first" v-for="item in law" :key="item.id">
             <view>
                 <text class="gray">抽查计划编号</text>
-                <view>{{law.plannumber ? law.plannumber : '-'}}</view>
+                <view>{{item.plannumber ? item.plannumber : '-'}}</view>
             </view>
             <view>
                 <text class="gray">抽查计划名称</text>
-                <view>{{law.planname ? law.planname : '-'}}</view>
+                <view>{{item.planname ? item.planname : '-'}}</view>
             </view>
             <view>
                 <text class="gray">抽查任务名称</text>
-                <view>{{law.taskname ? law.taskname : '-'}}</view>
+                <view>{{item.taskname ? item.taskname : '-'}}</view>
             </view>
             <view class="flex u-margin-top-20 u-padding-bottom-30">
                 <view class="item">
                     <text class="gray">抽查类型</text>
-                    <view>{{law.type ? law.type : ''}}</view>
+                    <view>{{item.type ? item.type : ''}}</view>
                 </view>
                 <view class="item u-border-left u-padding-left-20">
                     <text class="gray">抽查机关</text>
-                    <view>{{law.organ ? law.organ : ''}}</view>
+                    <view>{{item.organ ? item.organ : ''}}</view>
                 </view>
             </view>
             <view class="items">
                 <text class="gray">抽查完成日期</text>
-                <view class="red">{{law.date ? law.date : ''}}</view>
+                <view class="red">{{item.date ? item.date : ''}}</view>
             </view>
             <view class="items">
                 <text class="gray">检查情况</text>
-                <view>{{law.content ? law.content : ''}}</view>
+                <view @click="qk(item.id)" class="red">查看详情</view>
             </view>
         </view>
     </view>
@@ -39,7 +39,7 @@
     export default {
         data(){
             return {
-                law:[]
+                law:{}
             }
         },
         onLoad (options) {
@@ -57,6 +57,11 @@
                 this.law = res
                 console.log(res)
             },
+            qk(id){
+                uni.navigateTo({
+                    url:'/pages/company/jianchaqk?id='+id
+                })
+            }
         }
     }
 </script>
@@ -68,6 +73,9 @@
 <style lang="scss" scoped>
     .gray{
         color:#959595;
+    }
+    .red{
+        color:#fd5123;
     }
     .first{
         line-height: 50rpx;

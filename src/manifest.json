@@ -1,12 +1,12 @@
 {
     "@platforms" : [ "android", "iPhone", "iPad" ],
     "id" : "__UNI__0AA0B11",
-    "name" : "一企查",
+    "name" : "企仁企信",
     "version" : {
         "name" : "1.0.3",
         "code" : 103
     },
-    "description" : "一企查是以公开数据为切入点、以关系为核心的产品，在帮助传统企业或个人降低成本、防范化解金融风险方面提供了产品化的解决方案。",
+    "description" : "企仁企信是以公开数据为切入点、以关系为核心的产品，在帮助传统企业或个人降低成本、防范化解金融风险方面提供了产品化的解决方案。",
     "launch_path" : "__uniappview.html",
     "developer" : {
         "name" : "",

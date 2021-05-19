@@ -86,7 +86,7 @@
                     <u-field
                             label="手机号"
                             type="number"
-                            placeholder="仅医企商城官方可见"
+                            placeholder="仅企仁企信官方可见"
                             v-model="phone" :border-bottom="false"
                     ></u-field>
                 </view>
@@ -96,7 +96,7 @@
             <view class="yiqibao" @click="goto('index/ensure')">
                 <view class="bao-items">
                     <view class="title-icon">
-                        <image mode="aspectFit" src="/static/image/yiqibao.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/fuwubao1.jpg"></image>
                     </view>
                     <view class="item">
                         <image mode="aspectFit" src="/static/image/bao.png"></image>
@@ -307,7 +307,7 @@
                 need: '',
                 phone: '',
                 alertShow: false,
-                content: '医企网客户经理将尽快与您联系',
+                content: '企仁企信客户经理将尽快与您联系',
                 customStyle: {
                     width: '80%',
                     top: '10rpx',

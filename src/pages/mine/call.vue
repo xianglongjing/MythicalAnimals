@@ -3,7 +3,7 @@
         <view class="banner">
             <u-image mode="aspectFill" border-radius="20" width="180" height="180"
                      src="https://seopic.699pic.com/photo/50134/3865.jpg_wh1200.jpg"></u-image>
-            <text class="u-margin-top-30">一企查V12.28.0</text>
+            <text class="u-margin-top-30">企仁企信V12.28.0</text>
         </view>
         <view class="flex u-border-bottom" @click="callPhone">
             <view>

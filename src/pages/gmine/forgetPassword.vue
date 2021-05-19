@@ -27,7 +27,7 @@
         </u-cell-group>
         <view class="hint">
           <!-- 注册即代表您同意
-          <text class="link">医企网 《用户协议》、《隐私政策》，</text>并授权使用您的账号信息（如昵称、头像、联系地址）以便您统一管理-->
+          <text class="link">企仁企信 《用户协议》、《隐私政策》，</text>并授权使用您的账号信息（如昵称、头像、联系地址）以便您统一管理-->
         </view>
         <u-button
           shape="circle"

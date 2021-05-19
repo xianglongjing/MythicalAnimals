@@ -47,7 +47,7 @@
 		</view>
 		<view class="hint">
 			注册即代表您同意
-			<text class="link" @click="goto('common/protocols')">医企网 《用户协议》、</text>
+			<text class="link" @click="goto('common/protocols')">企仁企信网 《用户协议》、</text>
 			<text class="link" @click="goto('common/privacy')">《隐私政策》，</text>并授权使用您的账号信息（如昵称、头像、联系地址）以便您统一管理
 		</view>
 		<view class="buttom">

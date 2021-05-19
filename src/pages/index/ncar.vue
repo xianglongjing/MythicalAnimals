@@ -6,7 +6,7 @@
         <view class="content">
         <u-image mode="aspectFille" src="https://yiqiwang360.com/images/yiqiguanjia/cardm.png" width="170" height="160"></u-image>
         <view class="con-r">
-            <view class="title">医企管家官方挪车码</view>
+            <view class="title">挪车码</view>
             <text class="text-gray">优惠价格 仅享一次</text>
 <!--            <view class="price">￥ <text class="big">1.00</text></view>-->
             <view class="price">￥ <text class="big">1.00</text></view>
@@ -18,12 +18,12 @@
             <u-icon name="arrow-up" size="60" color="#666666"></u-icon>
         </view>
         <view class="show">
-            <u-divider half-width="50" style="font-weight: bolder;padding:100rpx 0;" color="#000000">解决停车困扰</u-divider>
+            <u-divider half-width="50" style="font-weight: bolder;padding:100rpx 0;" color="#000000">使用说明</u-divider>
            <view class="show-con u-margin-top-30">
             <view class="show-item">
              <u-image mode="aspectFill" src="https://yiqiwang360.com/images/yiqiguanjia/car1.png" width="300rpx" height="200rpx" border-radius="20rpx"></u-image>
-                <view>打开医企管家[扫一扫]</view>
-                <text>使用医企管家扫码绑定</text>
+                <view>打开[扫一扫]</view>
+                <text>扫码绑定</text>
             </view>
             <view class="show-item">
                 <u-image mode="aspectFill" src="https://yiqiwang360.com/images/yiqiguanjia/car2.png" width="300rpx" height="200rpx" border-radius="20rpx"></u-image>
@@ -43,7 +43,7 @@
            </view>
         </view>
         <view class="stop">
-            <u-divider half-width="50" style="font-weight: bolder;padding:30rpx 0" color="#000000">使用说明</u-divider>
+            <u-divider half-width="50" style="font-weight: bolder;padding:30rpx 0" color="#000000">解决停车困扰</u-divider>
             <view class="stop-item">
                 <u-image src="https://yiqiwang360.com/images/yiqiguanjia/stop1.png" width="100%" height="300"></u-image>
                 <view>电话通知，随时挪车</view>
@@ -56,10 +56,10 @@
         <view class="question">
             <u-divider half-width="50" style="font-weight: bolder;padding:30rpx 0" color="#000000">常见问题</u-divider>
             <view class="ques">
-                使用医企管家挪车码会产生额外费用吗？
+                使用挪车码会产生额外费用吗？
             </view>
             <view class="answer">
-                医企管家挪车码是在挪车场中为保护用户车主隐私的产品，除了购买挪车码的费用及在拨叫过程中产生正常的通话资费，没有额外费用。
+                挪车码是在挪车场中为保护用户车主隐私的产品，除了购买挪车码的费用及在拨叫过程中产生正常的通话资费，没有额外费用。
             </view>
             <view class="ques u-margin-top-60">
                 如何使用挪车码？
@@ -72,7 +72,7 @@
         <view class="footer">
         <view class="help u-margin-bottom-50">客服帮助</view>
             <u-divider half-width="50" fontSize="35" style="font-weight: bolder;padding:30rpx 0" color="#000000" bg-color="#f8f8f8">挪车服务</u-divider>
-        <text class="text-gray">本服务由医企管家提供</text>
+        <text class="text-gray">本服务由企仁企信提供</text>
         </view>
     </view>
 </template>
@@ -113,7 +113,7 @@
 </style>
 <style lang="scss" scoped>
 .bg{
-    background-image: url("https://yiqiwang360.com/images/yiqiguanjia/carbg.png");
+    background-image: url("https://images.yiqiwang360.com/qirenqixin/guanjia/nuochema.png");
     background-size: 750rpx 1200rpx;
     width:100%;
     height: 1200rpx;

@@ -16,9 +16,9 @@
             <view v-if="keyword==''">
         <view class="sou u-margin-top-20">热门搜索</view>
         <view class="tips u-margin-top-20">
-            <text>医企管家</text>
-            <text>医企网</text>
-            <text>一企查</text>
+            <text>企仁企信</text>
+            <text>企仁企信</text>
+            <text>企仁企信</text>
         </view>
             </view>
 <!--            <view style="height:50rpx"></view>-->

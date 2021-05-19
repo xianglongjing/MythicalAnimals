@@ -1,11 +1,10 @@
-
 <template>
     <view class="page">
         <view class="bgred" :style ="bg">
             <view class="bg-top">
                 <view class="u-margin-right-20">
-                    <image class="navbar-icon" src="https://yiqiwang360.com/images/yiqiguanjia/icons/shou.png" style="width:50rpx;height:40rpx"></image>
-                    <text class="navbar-text">医企管家</text>
+                    <image mode="aspectFit" class="navbar-icon" src="https://images.yiqiwang360.com/qirenqixin/logobai.png" style="width:50rpx;height:40rpx"></image>
+                    <text class="navbar-text">企仁企信</text>
                 </view>
                 <u-search
                         :action-style="search_btn"

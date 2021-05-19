@@ -2,7 +2,7 @@
   <view class="page">
     <view class="back">
       <view class="yellow">
-        <view class="title">一企查VIP会员</view>
+        <view class="title">企仁企信VIP会员</view>
         <view>开通VIP会员，享众多超值权益</view>
       </view>
     </view>
@@ -19,10 +19,10 @@
         <view class="tips">
           <view>活动说明:</view>
           <view>
-            1.活动期间，购买3年一企查VIP套餐随机加送10-15个月一企查VIP，具体加送时长以页面显示为准。
+            1.活动期间，购买3年企仁企信VIP套餐随机加送10-15个月企仁企信VIP，具体加送时长以页面显示为准。
           </view>
           <view>
-            2.购买成功后赠送的一企查VIP将会自动充值到购买账户中。
+            2.购买成功后赠送的企仁企信VIP将会自动充值到购买账户中。
           </view>
         </view>
         <view class="wx u-border-bottom">
@@ -64,7 +64,7 @@
             <view class="items">
               <u-image mode="aspectFit" width="70" height="70"
                        src="http://images.yiqiwang360.com/yiqicha/huiyuan/huiyuan2.png"></u-image>
-              <text>一企查风险</text>
+              <text>企仁企信风险</text>
             </view>
             <view class="items">
               <u-image mode="aspectFit" width="70" height="70"

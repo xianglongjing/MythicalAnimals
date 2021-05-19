@@ -4,11 +4,11 @@
         <view class="zi">
             <view class="banner u-margin-bottom-50">
 <!--              http://images.yiqiwang360.com/yiqicha/fangdajing.png-->
-                <u-image src="http://images.yiqiwang360.com/yiqicha/fangdajing.png" width="50" height="50"></u-image>
-                <view class="name u-padding-right-20">一企查</view>
+                <u-image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/logobai.png" width="50" height="50"></u-image>
+                <view class="name u-padding-right-20">企仁企信</view>
                 <view class="u-margin-left-20 u-font-22">
                     <view>免费查企业</view>
-                    <text>就上一企查</text>
+                    <text>就上企仁企信</text>
                 </view>
             </view>
             <u-tabs
@@ -225,7 +225,7 @@
 <!--      <view style="padding:50rpx 0;text-align: center">-->
 <!--        <view style="color:white;font-size: 45rpx;font-weight: 600">我们共有三种服务</view>-->
 <!--        <view style="margin-top:20rpx;letter-spacing:10rpx;font-weight: 600;font-size: 52rpx;color:#FBCA41">请选择您最需要的</view>-->
-<!--        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="cha">企仁企信查</u-button>-->
+<!--        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="cha">企仁企信</u-button>-->
 <!--        <u-button :hair-line="false" :plain="true" shape="circle" @click="guanjia" :customStyle="button">企仁企信管家</u-button>-->
 <!--        <u-button :hair-line="false" :plain="true" shape="circle" :customStyle="button" @click="shang">企仁企信商城</u-button>-->
 <!--      </view>-->

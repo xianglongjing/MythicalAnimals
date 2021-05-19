@@ -47,7 +47,7 @@ export default {
   data () {
     return {
       alertShow: false,
-      content: '医企网客户经理将尽快与您联系',
+      content: '企仁企信客户经理将尽快与您联系',
       form: {
         name: '',
         phone: '',

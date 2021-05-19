@@ -23,8 +23,8 @@
 <!--                </view>-->
 <!--            </view>-->
 <!--            <view class="tips">-->
-<!--                <text>医企管家</text>-->
-<!--                <text>医企网</text>-->
+<!--                <text>企仁企信</text>-->
+<!--                <text>企仁企信</text>-->
 <!--                <text>一企查</text>-->
 <!--            </view>-->
 <!--            </view>-->
@@ -34,9 +34,9 @@
             <text>热门搜索</text>
         </view>
         <view class="tips">
-            <text>医企管家</text>
-            <text>医企网</text>
-            <text>一企查</text>
+            <text>企仁企信</text>
+            <text>企仁企信</text>
+            <text>企仁企信</text>
         </view>
     </view>
         <u-empty src="http://images.yiqiwang360.com/yiqicha/wujilu.png" class="u-margin-30" :show="emptyShow">

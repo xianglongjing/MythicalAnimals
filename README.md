@@ -1,4 +1,4 @@
-# 一企查APP
+# 企仁企信APP
 #####Ver:1.0.1 
 #####npm:3.1.11
 [更新依赖版本](https://www.npmjs.com/package/@dcloudio/vue-cli-plugin-hbuilderx).

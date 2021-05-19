@@ -1,7 +1,7 @@
 <template>
     <view class="page">
         <view class="more">
-            <view class="title u-border-bottom">上传营业执照 <text class="red">(非三证各一执照请到医企网电脑端认证)</text></view>
+            <view class="title u-border-bottom">上传营业执照 <text class="red">(非三证各一执照请到企仁企信电脑端认证)</text></view>
             <view class="more-con":style ="bg">
                 <u-button :custom-style="bus" shape="circle"><text class="cuIcon-camera camera"></text>上传三证合一营业执照</u-button>
             </view>

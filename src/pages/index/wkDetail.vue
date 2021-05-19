@@ -46,7 +46,7 @@
             <view>
                 <view class="bao-items">
                     <view class="title-icon">
-                        <image mode="aspectFit" src="/static/image/yiqibao.png"></image>
+                        <image mode="aspectFit" src="https://images.yiqiwang360.com/qirenqixin/fuwubao1.jpg"></image>
                     </view>
                     <view class="item">
                         <image mode="aspectFit" src="/static/image/bao.png"></image>

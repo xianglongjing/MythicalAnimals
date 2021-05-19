@@ -9,7 +9,7 @@
             </u-form>
             <view class="desc">
                 <view>说明：</view>
-                <view>1.兑换码用于兑换一企查尊享卡以及一企查VIP试用</view>
+                <view>1.兑换码用于兑换企仁企信尊享卡以及企仁企信VIP试用</view>
                 <view>2.每个兑换码，仅可兑换一次，重复使用无效</view>
                 <view>3.兑换成功，VIP立即生效至兑换账户中
                 </view>

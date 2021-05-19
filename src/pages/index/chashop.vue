@@ -127,7 +127,7 @@
             </view>
             <view class="danger">
                 <view class="top">
-                    <text class="title red">一企查风险</text>
+                    <text class="title red">企仁企信风险</text>
                     <text>风险等级 <text class="level">中等</text></text>
                 </view>
                 <view class="flex">
@@ -153,7 +153,7 @@
             </view>
             <view class="tupu">
                 <view class="item">
-                    <text class="title">一企图谱</text>
+                    <text class="title">企仁企信图谱</text>
                     <view class="con">
                         <u-image mode="aspectFill" border-radius="10"
                                  height="150" width="180"
@@ -360,7 +360,7 @@
                                  height="50"></u-image>
                         <view class="grid-text">动产抵押</view>
                     </u-grid-item>
-                    <u-grid-item @click="go('company/huanbaochufa?id='+newsList.id)">
+                    <u-grid-item @click="go('company/protect?id='+newsList.id)">
                         <view class="num2"> {{newsList.protection}}</view>
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi8.png" width="50"
                                  height="50"></u-image>
@@ -388,11 +388,6 @@
                                  height="50"></u-image>
                         <view class="grid-text">询价评估</view>
                     </u-grid-item>
-                    <u-grid-item @click="go('company/qingsuanxinxi?id='+newsList.id)">
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi2.png" width="50"
-                                 height="50"></u-image>
-                        <view class="grid-text">清算信息</view>
-                    </u-grid-item>
                     <u-grid-item @click="go('company/zhishichanquanchuzhi?id='+newsList.id)">
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi4.png" width="50"
                                  height="50"></u-image>
@@ -403,10 +398,10 @@
                                  height="50"></u-image>
                         <view class="grid-text">公示催告</view>
                     </u-grid-item>
-                    <u-grid-item @click="go('company/tudizhiya?id='+newsList.id)">
+                    <u-grid-item @click="go('company/tudidiya?id='+newsList.id)">
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi10.png" width="50"
                                  height="50"></u-image>
-                        <view class="grid-text">土地质押</view>
+                        <view class="grid-text">土地抵押</view>
                     </u-grid-item>
                     <u-grid-item @click="go('company/jianyizhuxiao?id='+newsList.id)">
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi20.png" width="50"

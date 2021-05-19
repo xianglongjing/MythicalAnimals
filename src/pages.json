@@ -8,7 +8,7 @@
       "style": {
         "navigationBarTextStyle": "black",
         "navigationStyle": "custom",
-        "navigationBarTitleText": "一企查",
+        "navigationBarTitleText": "企仁企信",
         "enablePullDownRefresh": true
       }
     },
@@ -17,7 +17,7 @@
       "style": {
         "navigationBarTextStyle": "black",
         "navigationStyle": "custom",
-        "navigationBarTitleText": "医企管家",
+        "navigationBarTitleText": "企仁企信",
         "enablePullDownRefresh": true,
         "backgroundColor": "#ffffff"
       }
@@ -27,7 +27,7 @@
       "style": {
         "navigationBarTextStyle": "black",
         "navigationStyle": "custom",
-        "navigationBarTitleText": "企仁企信商城",
+        "navigationBarTitleText": "企仁企信",
         "enablePullDownRefresh": true,
         "backgroundColor": "#ffffff"
       }
@@ -845,7 +845,7 @@
     {
       "path": "pages/danger/shopDetail",
       "style": {
-        "navigationBarTitleText": "一企查风险",
+        "navigationBarTitleText": "企仁企信风险",
         "navigationBarTextStyle":"black",
         "enablePullDownRefresh": true
       }
@@ -861,7 +861,7 @@
     {
       "path": "pages/danger/manDetail",
       "style": {
-        "navigationBarTitleText": "一企查风险",
+        "navigationBarTitleText": "企仁企信风险",
         "navigationBarTextStyle":"black",
         "enablePullDownRefresh": true,
         "backgroundColor": "#D12815"
@@ -993,6 +993,14 @@
       "path": "pages/company/protect",
       "style": {
         "navigationBarTitleText": "环保处罚",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/protectD",
+      "style": {
+        "navigationBarTitleText": "环保处罚详情",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FD5123"
       }
@@ -1374,6 +1382,14 @@
       }
     },
     {
+      "path": "pages/company/xunjiapingguD",
+      "style": {
+        "navigationBarTitleText": "询价评估详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/qingsuanxinxi",
       "style": {
         "navigationBarTitleText": "清算信息",
@@ -1390,9 +1406,17 @@
       }
     },
     {
-      "path": "pages/company/tudizhiya",
+      "path": "pages/company/tudidiya",
       "style": {
-        "navigationBarTitleText": "土地质押",
+        "navigationBarTitleText": "土地抵押",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/tudidiyaD",
+      "style": {
+        "navigationBarTitleText": "土地抵押详情",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FD5123"
       }
@@ -1518,6 +1542,14 @@
       }
     },
     {
+      "path": "pages/company/jianchaqk",
+      "style": {
+        "navigationBarTitleText": "检查情况",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/zhaotoubiao",
       "style": {
         "navigationBarTitleText": "招投标",
@@ -1561,6 +1593,14 @@
       "path": "pages/company/gonggaoyanbao",
       "style": {
         "navigationBarTitleText": "公告研报",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/gonggaoyanbaoD",
+      "style": {
+        "navigationBarTitleText": "公告研报详情",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FD5123"
       }
@@ -1801,7 +1841,7 @@
   ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "一企查",
+    "navigationBarTitleText": "企仁企信",
     "navigationBarBackgroundColor": "#ffffff",
     "backgroundColor": "#ffffff",
     "maxWidth": "750"
@@ -1825,7 +1865,7 @@
         "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren7.png"
       },
       {
-        "text": "企仁企信查",
+        "text": "查企业",
         "pagePath": "pages/index/index",
         "iconPath": "http://images.yiqiwang360.com/qirenqixin/qiren3.png",
         "selectedIconPath": "http://images.yiqiwang360.com/qirenqixin/qiren8.png"
