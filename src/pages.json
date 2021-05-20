@@ -1326,6 +1326,14 @@
       }
     },
     {
+      "path": "pages/company/zhongbenajD",
+      "style": {
+        "navigationBarTitleText": "终本案件详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/shixininfo",
       "style": {
         "navigationBarTitleText": "失信信息",
@@ -1369,6 +1377,14 @@
       "path": "pages/company/sifapaimai",
       "style": {
         "navigationBarTitleText": "司法拍卖",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/sifapaimaiD",
+      "style": {
+        "navigationBarTitleText": "司法拍卖详情",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FD5123"
       }

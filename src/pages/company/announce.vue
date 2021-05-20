@@ -9,59 +9,59 @@
                     active-color="#E2291D" bg-color="none" inactive-color="#666666"
             ></u-tabs>
         </view>
-        <view class="white">
+        <view class="white" v-for="item in con" :key="item.id">
             <view class="info">
                 <view class="info-l">
                     <u-image mode="aspectFill" width="80" height="80"
-                             src="https://seopic.699pic.com/photo/50139/5280.jpg_wh1200.jpg"></u-image>
-                    <text class="red u-margin-left-30">卢雪山</text>
+                             :src="item.partner.image || 'https://seopic.699pic.com/photo/50139/5280.jpg_wh1200.jpg'"></u-image>
+                    <text class="red u-margin-left-30">{{item.partner.name}}</text>
                 </view>
                 <view>
-                    <text>任职9家企业</text>
+                    <text>任职{{item.corporate_count}}家企业</text>
                 </view>
             </view>
-            <view>
+            <view class="u-margin-top-20">
                 <text class="gray">持股比例</text>
-                <view>-</view>
+                <view>{{item.ratio ? item.ratio : '-'}}</view>
             </view>
             <view class="flex">
                 <view>
                     <text class="gray">认缴出资额</text>
-                    <view>-</view>
+                    <view>{{item.scc ? item.scc : '-'}}</view>
                 </view>
                 <view class="u-border-left u-padding-left-20">
                     <text class="gray">实缴出资额</text>
-                    <view>-</view>
+                    <view>{{item.capital ? item.capital : '-'}}</view>
                 </view>
             </view>
             <view class="flex">
                 <view>
                     <text class="gray">认缴出资日期</text>
-                    <view>-</view>
+                    <view>{{item.sccd ? item.sccd : '-'}}</view>
                 </view>
                 <view class="u-border-left u-padding-left-20">
                     <text class="gray">实缴出资日期</text>
-                    <view>-</view>
+                    <view>{{item.payment ? item.payment : '-'}}</view>
                 </view>
             </view>
             <view class="flex">
                 <view>
                     <text class="gray">认缴公示日期</text>
-                    <view>-</view>
+                    <view>{{item.spad ? item.spad : '-'}}</view>
                 </view>
                 <view class="u-border-left u-padding-left-20">
                     <text class="gray">实缴公示日期</text>
-                    <view>-</view>
+                    <view>{{item.padoap ? item.padoap : '-'}}</view>
                 </view>
             </view>
             <view class="flex">
                 <view>
                     <text class="gray">认缴出资方式</text>
-                    <view>-</view>
+                    <view>{{item.sttccm ? item.sttccm : '-'}}</view>
                 </view>
                 <view class="u-border-left u-padding-left-20">
                     <text class="gray">实缴出资方式</text>
-                    <view>-</view>
+                    <view>{{item.mopc ? item.mopc : '-'}}</view>
                 </view>
             </view>
         </view>
@@ -78,9 +78,24 @@
                     name: '股东变更信息0'
                 }],
                 current:0,
+                con:{}
             }
         },
+        onLoad(options){
+            this.list(options.id)
+        },
         methods:{
+            async list (id) {
+                const { data: res } = await this.$request({
+                    method: 'GET',
+                    data:{
+                        id:id
+                    },
+                    url: 'applets/trademarksave',
+                })
+                console.log(res)
+                this.con=res
+            },
             Change(index) {
                 this.current = index;
             },
@@ -116,6 +131,7 @@
     }
     .flex{
         margin:20rpx 0;
+        line-height: 50rpx;
         justify-content: space-between;
         view{
             flex:1;

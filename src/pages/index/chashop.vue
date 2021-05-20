@@ -213,30 +213,30 @@
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing1.png" width="50" height="50"></u-image>
                         <view class="grid-text">对外投资</view>
                     </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing6.png" width="50" height="50"></u-image>
-                        <view class="grid-text">股权结构</view>
-                    </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing5.png" width="50" height="50"></u-image>
-                        <view class="grid-text">最终受益人</view>
-                    </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing14.png" width="50" height="50"></u-image>
-                        <view class="grid-text">实际控制人</view>
-                    </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing13.png" width="50" height="50"></u-image>
-                        <view class="grid-text">实际控制权</view>
-                    </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing9.png" width="50" height="50"></u-image>
-                        <view class="grid-text">财务简析</view>
-                    </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing11.png" width="50" height="50"></u-image>
-                        <view class="grid-text">企业关系</view>
-                    </u-grid-item>
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing6.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">股权结构</view>-->
+<!--                    </u-grid-item>-->
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing5.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">最终受益人</view>-->
+<!--                    </u-grid-item>-->
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing14.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">实际控制人</view>-->
+<!--                    </u-grid-item>-->
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing13.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">实际控制权</view>-->
+<!--                    </u-grid-item>-->
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing9.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">财务简析</view>-->
+<!--                    </u-grid-item>-->
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing11.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">企业关系</view>-->
+<!--                    </u-grid-item>-->
                     <u-grid-item @click="go('company/changelog?id='+newsList.id)">
                         <view class="num"> {{newsList.change}}</view>
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing8.png" width="50"
@@ -248,16 +248,16 @@
                                  height="50"></u-image>
                         <view class="grid-text">企业年报</view>
                     </u-grid-item>
-                    <u-grid-item @click="go('company/announce')">
+                    <u-grid-item @click="go('company/announce?id='+newsList.id)">
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing12.png" width="60"
                                  height="50"></u-image>
                         <view class="grid-text">企业公示</view>
                     </u-grid-item>
-                    <u-grid-item>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing10.png" width="50"
-                                 height="50"></u-image>
-                        <view class="grid-text">附近同行</view>
-                    </u-grid-item>
+<!--                    <u-grid-item>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/qiyebeijing10.png" width="50"-->
+<!--                                 height="50"></u-image>-->
+<!--                        <view class="grid-text">附近同行</view>-->
+<!--                    </u-grid-item>-->
                 </u-grid>
             </view>
             <view class="back">
@@ -266,11 +266,11 @@
                     <text style="color:#FEC057;font-weight: 620">对风险信息进行解释说明 <text class="cuIcon-right"></text></text>
                 </view>
                 <u-grid :col="4" style="margin-top:30rpx">
-                    <u-grid-item>
-                        <view class="num2">4</view>
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi26.png" width="50" height="50"></u-image>
-                        <view class="grid-text">司法解析</view>
-                    </u-grid-item>
+<!--                    <u-grid-item>-->
+<!--                        <view class="num2">4</view>-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi26.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">司法解析</view>-->
+<!--                    </u-grid-item>-->
                     <u-grid-item @click="go('company/kaiting?id='+newsList.id)">
                         <view class="num2"> {{newsList.opencourt}}</view>
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi15.png" width="50" height="50"></u-image>
@@ -296,14 +296,19 @@
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi12.png" width="50" height="50"></u-image>
                         <view class="grid-text">终本案件</view>
                     </u-grid-item>
-                    <u-grid-item @click="go('company/shixininfo?id='+newsList.id)">
-                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi24.png" width="50" height="50"></u-image>
-                        <view class="grid-text">失信信息</view>
-                    </u-grid-item>
+<!--                    <u-grid-item @click="go('company/shixininfo?id='+newsList.id)">-->
+<!--                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi24.png" width="50" height="50"></u-image>-->
+<!--                        <view class="grid-text">失信信息</view>-->
+<!--                    </u-grid-item>-->
                     <u-grid-item @click="go('company/shixinbeizhixingren?id='+newsList.id)">
                         <view class="num2">{{newsList.debtor}}</view>
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi14.png" width="50" height="50"></u-image>
                         <view class="grid-text">失信被执行人</view>
+                    </u-grid-item>
+                    <u-grid-item @click="go('company/beiman?id='+newsList.id)">
+                        <view class="num6">{{newsList.debtor}}</view>
+                        <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/caise/fengxianxinxi14.png" width="50" height="50"></u-image>
+                        <view class="grid-text">被执行人</view>
                     </u-grid-item>
                     <u-grid-item @click="go('company/sifaxiezhu?id='+newsList.id)">
                         <view class="num2">{{newsList.assistance}}</view>
@@ -372,7 +377,7 @@
                                  height="50"></u-image>
                         <view class="grid-text">欠税公告</view>
                     </u-grid-item>
-                    <u-grid-item>
+                    <u-grid-item @click="go('company/sifapaimai?id='+newsList.id)">
                         <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/qyxq/huise/fengxianxinxi3.png" width="50"
                                  height="50"></u-image>
                         <view class="grid-text">司法拍卖</view>
