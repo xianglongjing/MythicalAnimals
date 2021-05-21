@@ -26,6 +26,24 @@
                     color:'#000'
                 }
             }
+        },
+        onLoad(){
+            this.getList()
+        },
+        methods:{
+            async getList () {
+                const token=uni.getStorageSync('token')
+                const { data: res } = await this.$request({
+                    url: 'applets/bossaround',
+                    method:'POST',
+                    data:{
+                        page:1,
+                        contact
+                    }
+                })
+                console.log(res)
+                this.goodsList = res
+            },
         }
     }
 </script>

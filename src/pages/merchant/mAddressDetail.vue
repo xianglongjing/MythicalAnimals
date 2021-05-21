@@ -25,6 +25,12 @@ export default {
       ]
     }
   },
+  // 下拉刷新
+  onPullDownRefresh () {
+    setTimeout(function() {
+      uni.stopPullDownRefresh();
+    }, 1000);
+  },
   onLoad (options) {
     this.address = options.address
     this.longitude = options.longitude

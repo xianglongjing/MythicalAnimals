@@ -77,6 +77,12 @@
         onLoad(){
             this.hotsearch()
         },
+        // 下拉刷新
+        onPullDownRefresh () {
+            setTimeout(function() {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
         methods:{
             async hotsearch () {
                 const { data: res } = await this.$request({

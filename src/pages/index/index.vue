@@ -89,8 +89,7 @@
               <u-search
                       :action-style="search_btn"
                       :animation="true" disabled
-                      @custom="goSearch"
-                      bg-color="#f8f8f8" @click="kaifa"
+                      @custom="goSearch" @click="danger"
                       input-align="left"
                       placeholder="请输入企业名称 老板名称 工商注册号等" shape="square"
               ></u-search>
@@ -345,19 +344,6 @@
     shang(){
       location.href = ' http://192.168.8.25:8082/'
     },
-    guanjia(){
-      uni.navigateTo({
-        url:'/pages/gindex/index'
-      })
-              this.show=false
-    },
-    async kaifa () {
-      uni.showToast({
-        title: '开发中',
-        icon:'none',
-        duration: 2000
-      });
-      },
       hotNewsGo(e){
         console.log(e)
           this.goto('index/newsDetail?id='+this.newsListAll[e]['id'])

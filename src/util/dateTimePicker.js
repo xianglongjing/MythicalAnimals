@@ -42,7 +42,7 @@ function getNewDateArry(){
     var newDate = new Date();
     var year = withData(newDate.getFullYear()),
         mont = withData(newDate.getMonth() + 1),
-        date = withData(newDate.getDate()+1)
+        date = withData(newDate.getDate())
     // seco = withData(newDate.getSeconds());
 
     return [year, mont, date];

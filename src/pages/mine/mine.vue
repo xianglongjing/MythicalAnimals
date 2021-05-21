@@ -106,7 +106,7 @@
     </view>
     <text class="right cuIcon-right"></text>
   </view>
-  <view class="item u-border-bottom" @click="go('mine/feedback')">
+  <view class="item u-border-bottom" @click="go('common/feedback')">
     <view class="item-l">
       <u-image mode="aspectFit" src="http://images.yiqiwang360.com/yiqicha/wode/wode (3).png" width="40" height="40"></u-image>
       <text>意见反馈</text>

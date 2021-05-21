@@ -475,6 +475,14 @@
       }
     },
     {
+      "path": "pages/mine/paytype",
+      "style": {
+        "navigationBarTitleText": "选择支付方式",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/visit/visitDetail",
       "style": {
         "navigationBarTitleText": "立即预约",
@@ -1449,6 +1457,22 @@
       "path": "pages/company/pochanchongzheng",
       "style": {
         "navigationBarTitleText": "破产重整",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/pochanczD",
+      "style": {
+        "navigationBarTitleText": "破产重整详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
+      "path": "pages/company/gonggaoD",
+      "style": {
+        "navigationBarTitleText": "公告详情",
         "enablePullDownRefresh": true,
         "backgroundColor": "#FD5123"
       }

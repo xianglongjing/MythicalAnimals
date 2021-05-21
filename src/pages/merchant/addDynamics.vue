@@ -54,6 +54,12 @@ export default {
   onLoad () {
     this.getStorage()
   },
+  // 下拉刷新
+  onPullDownRefresh () {
+    setTimeout(function() {
+      uni.stopPullDownRefresh();
+    }, 1000);
+  },
   methods: {
     // 获取本地存储
     getStorage () {

@@ -54,18 +54,18 @@
             </view>
         </view>
         <view v-if="current==1" class="list">
-            <view class="flex">
-                <view class="gray" style="flex:1">共监控：<text class="red">3</text></view>
-                <u-dropdown class="u-margin-left-80">
-                    <u-dropdown-item v-model="value1" title="全部" :options="options1"></u-dropdown-item>
-                </u-dropdown>
-            </view>
+<!--            <view class="flex">-->
+<!--                <view class="gray" style="flex:1">共监控：<text class="red">3</text></view>-->
+<!--                <u-dropdown class="u-margin-left-80">-->
+<!--                    <u-dropdown-item v-model="value1" title="全部" :options="options1"></u-dropdown-item>-->
+<!--                </u-dropdown>-->
+<!--            </view>-->
             <view class="flex u-margin-top-10" :key="item.id" v-for="item in goodsList">
                 <u-image mode="aspectFill" src="http://images.yiqiwang360.com/yiqicha/gongsiming.png" width="80" height="80"></u-image>
             <view class="flex-r">
-                <view class="name">{{item.cpyname}}</view>
+                <view class="name">{{item.corporate.cpyname}}</view>
                 <view style="display: flex;justify-content: space-between;font-size: 26rpx">
-                    <text class="gray">监控时间：{{item.ebhtdate ? item.ebhtdate:'—'}}</text>
+                    <text class="gray">监控时间：{{item.date ? item.date:'—'}}</text>
                     <text class="red">取消监控</text>
                 </view>
             </view>
@@ -78,13 +78,16 @@
     export default {
         data(){
             return {
+                storage: {
+                    token: ''
+                },
                 List: [{
                     name: '监控动态'
                 }, {
                     name: '监控列表'
                 }],
                 current:0,
-                goodsList:[],
+                goodsList:{},
                 value1:'',
                 options1: [{
                     label: '默认排序',
@@ -105,14 +108,14 @@
             this.getList();
         },
         onShow(){
-            this.getStorage()
+            this.getStorage();
         },
         methods:{
             getStorage () {
                 this.storage.token = uni.getStorageSync('token')
-                this.storage.id = uni.getStorageSync('id')
-                this.storage.nickName = uni.getStorageSync('nickName')
-                this.storage.avatarUrl = uni.getStorageSync('avatarUrl')
+                // this.storage.id = uni.getStorageSync('id')
+                // this.storage.nickName = uni.getStorageSync('nickName')
+                // this.storage.avatarUrl = uni.getStorageSync('avatarUrl')
             },
             Change(index) {
                 this.current = index;
@@ -120,7 +123,7 @@
             async getList () {
                 const token=uni.getStorageSync('token')
                 const { data: res } = await this.$request({
-                    url: 'applets/checkcompany',
+                    url: 'applets/monitor',
                     method:'POST',
                     data: {
                         token:uni.getStorageSync('token')

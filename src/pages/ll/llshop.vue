@@ -48,6 +48,12 @@
         onLoad(options){
             this.llshop(options.uscc)
         },
+        // 下拉刷新
+        onPullDownRefresh () {
+            setTimeout(function() {
+                uni.stopPullDownRefresh();
+            }, 1000);
+        },
         methods:{
             async llshop (uscc) {
                 const { data: res } = await this.$request({

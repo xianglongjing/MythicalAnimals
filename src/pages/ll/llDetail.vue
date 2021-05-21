@@ -49,6 +49,12 @@
            this.list(options.code)
         },
         methods:{
+            // 下拉刷新
+            onPullDownRefresh () {
+                setTimeout(function() {
+                    uni.stopPullDownRefresh();
+                }, 1000);
+            },
            go(id){
                uni.navigateTo({
                    url:'/pages/ll/shixin?id='+id

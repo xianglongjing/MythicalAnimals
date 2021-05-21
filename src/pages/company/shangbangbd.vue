@@ -51,9 +51,6 @@
             setTimeout(function() {
                 uni.stopPullDownRefresh();
             }, 1000);
-            // this.getSearchList(() => {
-            //     uni.stopPullDownRefresh()
-            // })
         },
         onLoad(options){
             this.getList(options.id)

@@ -85,6 +85,12 @@ export default {
       newAddress: ''
     }
   },
+  // 下拉刷新
+  onPullDownRefresh () {
+    setTimeout(function() {
+      uni.stopPullDownRefresh();
+    }, 1000);
+  },
   onLoad () {
     this.getStorage()
     this.getAddressList()
