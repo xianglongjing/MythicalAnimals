@@ -12,7 +12,7 @@
                     <text class="name">韩梅梅</text>
                     <u-icon name="edit-pen" size="35"></u-icon>
                 </view>
-                <view>账号：123456789</view>
+                <view>账号：{{storage.phone}}</view>
                 <view class="flex">
                     <text>资料完善度：</text>
                     <u-line-progress active-color="#E22619" :percent="20" style="width:250rpx" height="20"></u-line-progress>
@@ -104,6 +104,10 @@
                 startYear: 2000,
                 endYear: 2050,
                 upTower:"",
+                storage: {
+                    token: '',
+                    phone: ''
+                },
                 // birthday: currentDate,
                 bao:{
                     background:'#F44514',
@@ -211,6 +215,9 @@
                 // mode: 'date'
             }
         },
+        onShow(){
+            this.getStorage()
+        },
         onLoad(){
             //传入开始展示年份startYear 结束展示年份endYear
             //自定义开始显示时间
@@ -220,6 +227,11 @@
             this.dateTime = obj.dateTime
         },
         methods:{
+            // 获取本地存储
+            getStorage () {
+                this.storage.token = uni.getStorageSync('token')
+                this.storage.phone = uni.getStorageSync('phone')
+            },
             withData(param){
                 return param < 10 ? '0' + param : '' + param;
             },
