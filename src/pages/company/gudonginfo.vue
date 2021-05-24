@@ -9,12 +9,13 @@
                     active-color="#E12216" bg-color="none" inactive-color="#000000"
             ></u-tabs>
         </view>
-        <view class="down u-border-bottom">
-            <u-dropdown>
-                <u-dropdown-item v-model="value1" title="全部股东类型" :options="options1"></u-dropdown-item>
-                <u-dropdown-item v-model="value2" title="全部持股比例" :options="options2"></u-dropdown-item>
-            </u-dropdown>
-        </view>
+<!--        <view class="down u-border-bottom">-->
+<!--            <u-dropdown>-->
+<!--                <u-dropdown-item v-model="value1" title="全部股东类型" :options="options1"></u-dropdown-item>-->
+<!--                <u-dropdown-item v-model="value2" title="全部持股比例" :options="options2"></u-dropdown-item>-->
+<!--            </u-dropdown>-->
+<!--        </view>-->
+        <view v-if="current==0">
         <view class="white" v-for="item in detail" :key="item.id">
             <u-image mode="aspectFit" src="https://img2.baidu.com/it/u=1004953359,2131419137&fm=11&fmt=auto&gp=0.jpg" width="80" height="80"></u-image>
             <view class="right">
@@ -37,31 +38,39 @@
                         <text class="red">60%</text>
                     </view>
                     <view class="u-border-left u-padding-left-20">
-                        <view> 最终受益股份</view>
-                        <view class="flexs">60% <view class="u-margin-left-20" style="color:#4FA2CF">股权链 <u-icon name="arrow-right" color="#4FA2CF" size="30"></u-icon></view></view>
+                        <view> 股东类型</view>
+                        <view class="flexs">{{item.type ? item.type : '-'}}</view>
                     </view>
                 </view>
                 <view class="bottom">
                     <view>
                         <view>认缴出资额</view>
-                        <text class="red">1800</text>
+                        <text class="red">{{item.subscribed ? item.subscribed+'万' : '-'}}</text>
                     </view>
                     <view class="u-border-left u-padding-left-20">
                         <view> 认缴出资日期</view>
-                        <view class="flexs">63</view>
+                        <view class="flexs">{{item.date ? item.date : '-'}}</view>
                     </view>
                 </view>
                 <view class="bottom">
-                    <view>
+                    <view v-if="item.shares">
                         <view> 最终受益股份</view>
-                        <view class="flexs">60% <view class="u-margin-left-20" style="color:#4FA2CF">股权链 <u-icon name="arrow-right" color="#4FA2CF" size="30"></u-icon></view></view>
+                        <view class="flexs">
+                            {{item.shares}}% <view class="u-margin-left-20" style="color:#4FA2CF">
+<!--                            股权链 <u-icon name="arrow-right" color="#4FA2CF" size="30"></u-icon>-->
+                        </view></view>
                     </view>
-                    <view class="u-border-left u-padding-left-20">
+                    <view v-if="item.shares" class="u-padding-left-20">
                         <view> 任职职务</view>
-                        <view>33</view>
+                        <view>{{item.position}}</view>
                     </view>
                 </view>
             </view>
+        </view>
+        </view>
+        <view v-if="current==1">
+            <u-empty text="暂无信息" mode="list" class="u-margin-30" :show="emptyShows">
+            </u-empty>
         </view>
     </view>
 </template>
@@ -104,7 +113,8 @@
                 ],
                 current:0,
                 value1:'',
-                value2:''
+                value2:'',
+                emptyShows:true
             }
         },
         onLoad(options){
@@ -117,7 +127,7 @@
             async list(id) {
                 const {data: res} = await this.$request({
                     method: 'GET',
-                    url: 'applets/personnel',
+                    url: 'applets/partner',
                     data: {
                         id:id
                     }

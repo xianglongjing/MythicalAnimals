@@ -9,12 +9,12 @@
                     active-color="#E12216" bg-color="none" inactive-color="#000000"
             ></u-tabs>
         </view>
-        <view class="down u-border-bottom">
-            <u-dropdown>
-                <u-dropdown-item v-model="value" title="全部投资比例" :options="options1"></u-dropdown-item>
-            </u-dropdown>
-        </view>
-        <view class="infor u-border-bottom" v-for="item in group" :key="item.id">
+<!--        <view class="down u-border-bottom">-->
+<!--            <u-dropdown>-->
+<!--                <u-dropdown-item v-model="value" title="全部投资比例" :options="options1"></u-dropdown-item>-->
+<!--            </u-dropdown>-->
+<!--        </view>-->
+        <view v-if="current==0" class="infor u-border-bottom" v-for="item in group" :key="item.id">
             <u-image mode="aspectFit"
                      width="80" height="80"
                      src="https://img2.baidu.com/it/u=1004953359,2131419137&fm=11&fmt=auto&gp=0.jpg"></u-image>
@@ -39,17 +39,21 @@
            <view class="flex2">
                <view class="item">
                    <view class="gray">投资数额</view>
-                   <text>{{item.subscribed}}</text>
+                   <text>{{item.subscribed ? item.subscribed+'万' : '-'}}</text>
                </view>
                <view class="item2">
                    <text class="shu u-margin-right-20">|</text>
                    <view>
                        <view class="gray">投资比例</view>
-                       <text>{{item.ratio}}</text>
+                       <text>{{item.ratio ? item.ratio+'%' : '-'}}</text>
                    </view>
                </view>
            </view>
        </view>
+        </view>
+        <view v-if="current==1">
+            <u-empty text="暂无信息" mode="list" class="u-margin-30" :show="emptyShow">
+            </u-empty>
         </view>
     </view>
 </template>
@@ -61,7 +65,7 @@
                 group:{},
                 shop:[],
                 List: [{
-                    name: '对外投资1'
+                    name: '对外投资'
                 }, {
                     name: '历史对外投资0'
                 }],
@@ -79,7 +83,8 @@
                         value: 3,
                     }
                 ],
-                value:''
+                value:'',
+                emptyShow:true
             }
         },
         onLoad(options){

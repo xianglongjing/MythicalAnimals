@@ -1,6 +1,6 @@
 <template>
     <view class="page u-border-top">
-        <view class="con" v-for="item in goodsList" :key="item.id">
+        <view class="con" v-for="item in goodsList" :key="item.id" @click="detail(item.id)">
             <view>{{item.date}}年度报告</view>
             <u-icon name="arrow-right" color="#999999" size="30"></u-icon>
         </view>
@@ -30,6 +30,11 @@
                 console.log(res)
                 this.goodsList = res
             },
+            detail(id){
+                uni.navigateTo({
+                    url:'/pages/company/yearreportD?id='+id
+                })
+            }
         }
     }
 </script>

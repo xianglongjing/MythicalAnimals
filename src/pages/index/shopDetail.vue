@@ -7,7 +7,7 @@
         <view class="desc">
             <u-form :model="form" ref="uForm">
                 <u-form-item label="法定代表：" label-width="200rpx">
-                    <u-input v-model="partner.name" style="color:#9A9A9A" placeholder=" "/>
+                    <u-input v-model="partner.name" disabled style="color:#9A9A9A" placeholder=" "/>
                 </u-form-item>
                 <u-form-item label="注册资金：" label-width="200rpx">
                     <u-input v-model="shopList.rtdcapital" disabled placeholder=" "/>

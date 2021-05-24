@@ -23,7 +23,10 @@
                     </view>
                     <view class="u-border-left u-padding-left-20">
                         <view> 最终受益股份</view>
-                        <view class="flexs">60% <view class="u-margin-left-20" style="color:#4FA2CF">股权链 <u-icon name="arrow-right" color="#4FA2CF" size="30"></u-icon></view></view>
+                        <view class="flexs">60% <view class="u-margin-left-20" style="color:#4FA2CF">
+<!--                            股权链-->
+<!--                            <u-icon name="arrow-right" color="#4FA2CF" size="30"></u-icon>-->
+                        </view></view>
                     </view>
                 </view>
             </view>

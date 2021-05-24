@@ -1022,6 +1022,14 @@
       }
     },
     {
+      "path": "pages/company/yearreportD",
+      "style": {
+        "navigationBarTitleText": "企业年报详情",
+        "enablePullDownRefresh": true,
+        "backgroundColor": "#FD5123"
+      }
+    },
+    {
       "path": "pages/company/announce",
       "style": {
         "navigationBarTitleText": "企业公示",

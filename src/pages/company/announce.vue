@@ -13,11 +13,11 @@
             <view class="info">
                 <view class="info-l">
                     <u-image mode="aspectFill" width="80" height="80"
-                             :src="item.partner.image || 'https://seopic.699pic.com/photo/50139/5280.jpg_wh1200.jpg'"></u-image>
-                    <text class="red u-margin-left-30">{{item.partner.name}}</text>
+                             :src="item.image || 'https://seopic.699pic.com/photo/50139/5280.jpg_wh1200.jpg'"></u-image>
+                    <text class="red u-margin-left-30">{{item.name}}</text>
                 </view>
                 <view>
-                    <text>任职{{item.corporate_count}}家企业</text>
+                    <text>任职{{item.registernumber ? item.registernumber : '-'}}家企业</text>
                 </view>
             </view>
             <view class="u-margin-top-20">
